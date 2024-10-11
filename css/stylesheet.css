@@ -8,6 +8,13 @@ body {
     font-family:'Courier New', Courier, monospace;
     padding: 0;
 }
+form{
+    display: grid;
+    padding: 0 10%;
+}
+label{
+    text-align: left;
+}
 /* Wrapper div controls width of entire layout */
 #wrapper{
     background-color: white;
