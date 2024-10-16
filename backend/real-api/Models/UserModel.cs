@@ -1,7 +1,7 @@
 public class User {
-    public int Id { get; set; }
-    public string Username { get; set; }
-    public string Password { get; set; }
-    public string SecturityQuestion { get; set;}
-    public string SecurityAnswer {get; set;}
+    public int Id { get; set; } 
+    public string Username { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
+    public string SecturityQuestion { get; set;} = string.Empty;
+    public string SecurityAnswer {get; set;} = string.Empty;
 }
