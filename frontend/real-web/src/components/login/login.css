@@ -45,7 +45,10 @@ input:hover {
 .submit-button-container {
     display: flex;
     justify-content: space-between;
-    padding-top: 8px;
+    padding-top: 8px;  
+}
+.submit-button-container a {
+    text-decoration: none;
 }
 button {
     color: #ffffff;
