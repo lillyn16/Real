@@ -1,5 +1,17 @@
 /* This is stylesheet.css an external style sheet */
   	/* Style whole page */
+header{
+    background-color: #3853a4;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+header a{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}
 body {
     background: linear-gradient(to bottom, #e0aecb, #7a60a8 70%);
     background-repeat: no-repeat;
@@ -61,6 +73,7 @@ footer{
 .buttons{
     background-color: #3853a4;
     color: white;
+    width: max-content;
 }
 
 .return{
@@ -70,4 +83,20 @@ footer{
 .vines{
     max-width: 100%;
     min-width: 100%;
+}
+.symptomsForm{
+    background-color: #7374b5;
+    width: max-content;
+    margin: auto;
+}
+.symptomsLine{
+    display: inline;
+}
+.logo{
+    height: 50px;
+}
+.selected{
+    background-color: #ada9d4;
+    align-self: stretch;
+    align-content: center;
 }
