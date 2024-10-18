@@ -1,7 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginPage from './views/login';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import LoginPage from './components/login/login';
+import CreateAccountPage from './components/create-account/create-account';
+import ForgotPasswordPage from './components/forgot-password/forgot-password';
+
 
 function App() {
   return (
@@ -24,7 +27,12 @@ function App() {
     <Router>
       <div>
         <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/create-account" element={<CreateAccountPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+
         </Routes>
       </div>
     </Router>
