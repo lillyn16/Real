@@ -9,6 +9,7 @@ header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+   
 }
 header a{
     color: white;
@@ -21,7 +22,8 @@ body {
     color: white;
     text-align: center;
     font-family:'Courier New', Courier, monospace;
-   
+    padding: 0;
+    margin: 0;
 }
 form{
     display: grid;
@@ -89,6 +91,11 @@ footer{
 .symptomsLine{
     display: inline;
 }
+
+.symbols {
+    max-width: 100px;
+    max-height: 130px;
+}
 .logo{
     height: 50px;
 }
@@ -135,6 +142,7 @@ table {
     align-content: left;
     height: 400px;
     width: 400px;
+    border-radius: 10px;
 }
   
 .boxright {
@@ -143,4 +151,29 @@ table {
     align-content: right;
     height: 400px;
     width: 400px;
+    border-radius: 10px;
   }
+  
+.fourboxes {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px 20px;
+    width: 200px;
+    margin: 10px;
+}
+
+.searchbar {
+    height: 40px;
+    align-items: center;
+
+}
+.searchbutton {
+    padding: 6px 10px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
