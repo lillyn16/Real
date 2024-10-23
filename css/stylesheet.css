@@ -140,8 +140,12 @@ table {
     background-color: #7374b5;
     display: inline-block;
     align-content: center;
-    height: 200px;
-    width: 1000px;
+    text-align: left;
+    margin-left: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: auto;
+    width: 1200px;
 }
 .boxleft {
     display: inline-block;
