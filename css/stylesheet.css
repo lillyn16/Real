@@ -136,6 +136,13 @@ table {
     height: 100px;
     width: 100px;
 }
+.boxcenter {
+    background-color: #7374b5;
+    display: inline-block;
+    align-content: center;
+    height: 200px;
+    width: 1000px;
+}
 .boxleft {
     display: inline-block;
     background-color:#ada9d4;
@@ -156,18 +163,18 @@ table {
   
 .fourboxes {
     display: grid;
+    text-align: center;
     align-items: center;
-    align-content: center;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px 20px;
+    grid-gap: 40px 40px;
     width: 200px;
     margin: 10px;
+    padding-left: 300px;
 }
 
 .searchbar {
-    height: 40px;
+    padding: 50px 50px;
     align-items: center;
-
 }
 .searchbutton {
     padding: 6px 10px;
@@ -175,5 +182,33 @@ table {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+}
 
+.fourcircles {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px 30px;
+    width: 100px;
+    margin: 10px;
+    padding-left: 300px;
+    margin-top: 50px;
+    
+}
+.circles {
+    display: inline-block;
+    background-color:#ada9d4;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    
+}
+.circular_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display:inline-block;
+    vertical-align:middle;
 }
