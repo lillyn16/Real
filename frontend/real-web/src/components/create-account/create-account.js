@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import './create-account.css';
 
 const CreateAccountPage = () => {
+  const createAccount = () => {
+    // navigate('/create-account');
+  };
+
   return (
     <div className="create-account-container">
-        <h1>Create Account</h1>
+        <div className='create-account-header'>Create Account</div>
         <form>
             <label htmlFor="Username">Username:</label><br />
             <input className="textbox" type="text" id="Username" name="Username" /><br />
@@ -34,7 +38,7 @@ const CreateAccountPage = () => {
             <div className="return">
                 <Link to="/login" className="return">Back to Login</Link>
             </div>
-            <input className="buttons" type="submit" value="Create Account" />
+            <button type='button' onClick={createAccount}>create</button>
             </div>
         </form>
         <img className="vines" src="/images/vines.png" alt="Vines" />

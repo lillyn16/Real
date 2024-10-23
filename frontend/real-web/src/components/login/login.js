@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './login.css'
 import flourishPurpleImg from '../../images/flourish-purple.png'
 import { useNavigate, Link } from 'react-router-dom';
@@ -6,6 +6,34 @@ import { useNavigate, Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const login = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('token', data.Token); // Store token in localStorage
+        navigate('/forgot-password'); // Redirect
+      } else {
+        setErrorMessage('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setErrorMessage('Something went wrong in sending to backend.');
+    }
+  };
 
   const createAccount = () => {
     navigate('/create-account');
@@ -21,16 +49,17 @@ const LoginPage = () => {
             <div className='login-form'>
               <div className='input-container'>
                 <label>username</label>
-                <input type='text' id='username' name='username'></input>
+                <input type='text' value={username} onChange={(e) => setUsername(e.target.value)}></input>
               </div>
               <div className='input-container'>
                 <label>password</label>
-                <input type='text' id='password' name='password'></input>
+                <input type='text' value={password} onChange={(e) => setPassword(e.target.value)}></input>
               </div>
               <div className='submit-button-container'>
                 <Link to="/forgot-password">forgot password?</Link>
-                <button type='button'>log in</button>
+                <button type='button' onClick={login}>log in</button>
               </div>
+              {errorMessage && <div className='error-message'>{errorMessage}</div>}
               <hr className='break' />
               <div className='new-user-container'>
                 <div className='new-user-label'>
