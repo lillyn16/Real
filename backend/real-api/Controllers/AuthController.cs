@@ -17,7 +17,8 @@ namespace real_api.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
         {
-            // Validate user credentials (you'd typically do this against a database)
+            
+            // Validate user credentials (connect to database)
             if (request.Username == "test" && request.Password == "password") // Replace with actual validation
             {
                 var token = _authService.GenerateToken(request.Username);
