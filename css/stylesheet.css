@@ -241,7 +241,7 @@
         display: flex;
         padding: 0 10%;
         align-items: center;
-        
+        justify-content: center;
     }
     .changeUsername{
         background-color: #3853a4;
