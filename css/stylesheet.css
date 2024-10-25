@@ -1,252 +1,291 @@
 /* This is stylesheet.css an external style sheet */
   	/* Style whole page */
-header{
-    background-color: #3853a4;
-    height: 20%;
-    width: 100%;
-    min-width: 580px;
-    max-width: 2000px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-   
-}
-header a{
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-}
-body {
-    background: linear-gradient(to bottom, #e0aecb, #7a60a8 70%);
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    padding: 0;
-    margin: 0;
-    min-height: 100%;
-}
-form{
-    display: grid;
-    padding: 0 10%;
-}
-label{
-    text-align: left;
-}
-/* Wrapper div controls width of entire layout */
-#wrapper{
-    width: 100%;
-    min-width: 580px;
-    max-width: 2000px;
-    border-radius: 4px;
-}
-/* Navigation bar links (<a> tags) */
-nav a{
-    text-decoration: none;
-    color: white;
-    font-size: 115%;
-}
- /* Main content below the header and navbar */
- main{
-    padding: 8px;
-}
-
-footer{
-    background-color: #3853a4;
-    padding: 20px;
-    min-width: 700px;
-    max-width: 2000px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.textbox{
-    min-width: 80%;
-    margin: 10px 0;
-}
-
-.decision{
-    display: inline-flex;
-    justify-content: space-between;
-    min-width: 80%;
-}
-
-.buttons{
-    background-color: #3853a4;
-    color: white;
-    width: max-content;
-}
-
-.return{
-    color: #3853a4;
-}
-
-.vines{
-    max-width: 100%;
-    min-width: 100%;
-}
-.symptomsForm{
-    background-color: #7374b5;
-    width: max-content;
-    margin: auto;
-}
-.symptomsLine{
-    display: inline;
-}
-
-.symbols {
-    max-width: 100px;
-    max-height: 130px;
-}
-.logo{
-    height: 50px;
-}
-.selected{
-    background-color: #ada9d4;
-    align-self: stretch;
-    align-content: center;
-}
-table {
-    padding: 15px;
-    justify-content: space-evenly;
-    text-align: left;
-}
-.row1 {
-    text-align: center;
-    background-color:#ada9d4;
-    color:white;
+      header{
+        background-color: #3853a4;
+        height: 20%;
+        width: 100%;
+        min-width: 580px;
+        max-width: 2000px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+       
     }
-.row2 {
-    padding: 15px;
-    width: 100px;
-    justify-content: space-evenly;
-    text-align: center;
-    background-color:#3853a4;
-    color:white;
+    header a{
+        color: white;
+        text-decoration: none;
+        padding: 20px;
     }
-.row3 {
-    height: 200px;
-    width: 300px;
-    justify-content: space-evenly;
-    text-align: center;
-    background-color:#e0aecb;
-    color:white;
-}
-.row4{
-    height: 200px;
-    width: 300px;
-    justify-content: space-evenly;
-    text-align: center;
-    background-color:#3853a4;
-    color:white;
-}
-.box {
-    display: inline-block;
-    align-content: center;
-    height: 100px;
-    width: 100px;
-}
-.boxcenter {
-    background-color: #7374b5;
-    display: inline-block;
-    align-content: center;
-    text-align: left;
-    margin-left: 100px;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: auto;
-    width: 1200px;
-}
-.boxleft {
-    display: inline-block;
-    background-color:#ada9d4;
-    align-content: left;
-    height: 400px;
-    width: 400px;
-    border-radius: 10px;
-}
-  
-.boxright {
-    display: inline-block;
-    background-color:#ada9d4;
-    align-content: right;
-    height: 400px;
-    width: 400px;
-    border-radius: 10px;
-  }
-  
-.fourboxes {
-    display: grid;
-    text-align: center;
-    align-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 40px 40px;
-    width: 200px;
-    margin: 10px;
-    padding-left: 300px;
-}
-
-.searchbar {
-    padding: 50px 50px;
-    align-items: center;
-}
-.searchbutton {
-    padding: 6px 10px;
-    background: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.fourcircles {
-    display: grid;
-    text-align: center;
-    align-items: center;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px 30px;
-    width: 100px;
-    margin: 10px;
-    padding-left: 300px;
-    margin-top: 50px;
+    body {
+        background: linear-gradient(to bottom, #e0aecb, #7a60a8 70%);
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        font-family:'Courier New', Courier, monospace;
+        padding: 0;
+        margin: 0;
+        min-height: 100%;
+    }
+    form{
+        display: grid;
+        padding: 0 10%;
+    }
+    label{
+        text-align: left;
+    }
+    /* Wrapper div controls width of entire layout */
+    #wrapper{
+        width: 100%;
+        min-width: 580px;
+        max-width: 2000px;
+        border-radius: 4px;
+    }
+    /* Navigation bar links (<a> tags) */
+    nav a{
+        text-decoration: none;
+        color: white;
+        font-size: 115%;
+    }
+     /* Main content below the header and navbar */
+     main{
+        padding: 8px;
+    }
     
-}
-.circles {
-    display: inline-block;
-    background-color:#ada9d4;
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
+    footer{
+        background-color: #3853a4;
+        padding: 20px;
+        min-width: 700px;
+        max-width: 2000px;
+        font-family: 'Courier New', Courier, monospace;
+    }
     
-}
-.circular_image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    display:inline-block;
-    vertical-align:middle;
-}
-.buttonRow{
-    display: flex;
-    padding: 0 10%;
-}
-.changeUsername{
-    background-color: #3853a4;
-    align-self: stretch;
-    align-content: center;
-    padding: 10px;
-    margin: 0 5% 0 0;
-}
-.resetPassword{
-    background-color: #6aa0cf;
-    align-self: stretch;
-    align-content: center;
-    padding: 10px;
-    margin: 0 5% 0 0;
-}
-
-.changeUser{
-    background-color: #7373b6;
-    align-self: stretch;
-    align-content: center;
-    padding: 10px;
-}
+    .textbox{
+        min-width: 80%;
+        margin: 10px 0;
+    }
+    
+    .decision{
+        display: inline-flex;
+        justify-content: space-between;
+        min-width: 80%;
+    }
+    
+    .buttons{
+        background-color: #3853a4;
+        color: white;
+        width: max-content;
+    }
+    
+    .return{
+        color: #3853a4;
+    }
+    
+    .vines{
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .symptomsForm{
+        background-color: #7374b5;
+        width: max-content;
+        margin: auto;
+    }
+    .symptomsLine{
+        display: inline;
+    }
+    
+    .symbols {
+        max-width: 100px;
+        max-height: 130px;
+    }
+    .monthsymbols{
+        max-width: 90px;
+        max-height: 90px;
+    }
+    .logo{
+        height: 50px;
+    }
+    .selected{
+        background-color: #ada9d4;
+        align-self: stretch;
+        align-content: center;
+    }
+    table {
+        padding: 15px;
+        justify-content: space-evenly;
+        text-align: left;
+        min-width: 100%;
+    }
+    .row1 {
+        text-align: center;
+        background-color:#ada9d4;
+        color:white;
+        }
+    .row2 {
+        padding: 15px;
+        width: 100px;
+        justify-content: space-evenly;
+        text-align: center;
+        background-color:#3853a4;
+        color:white;
+        }
+    .row3 {
+        height: 200px;
+        width: 300px;
+        justify-content: space-evenly;
+        text-align: center;
+        background-color:#e0aecb;
+        color:white;
+    }
+    .row4{
+        height: 200px;
+        width: 300px;
+        justify-content: space-evenly;
+        text-align: center;
+        background-color:#3853a4;
+        color:white;
+    }
+    .monthrow{
+        height: 100px;
+        text-align: center;
+    }
+    .monthbox{
+        border: solid #5b5786;
+    }
+    .box {
+        display: inline-block;
+        align-content: center;
+        height: 100px;
+        width: 100px;
+    }
+    .boxcenter {
+        background-color: #7374b5;
+        display: inline-block;
+        align-content: center;
+        text-align: left;
+        margin-left: 100px;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: auto;
+        width: 1200px;
+    }
+    .boxleft {
+        display: inline-block;
+        background-color:#ada9d4;
+        align-content: left;
+        height: 400px;
+        width: 400px;
+        border-radius: 10px;
+    }
+      
+    .boxright {
+        display: inline-block;
+        background-color:#ada9d4;
+        align-content: right;
+        height: 400px;
+        width: 400px;
+        border-radius: 10px;
+      }
+      
+    .fourboxes {
+        display: grid;
+        text-align: center;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px 40px;
+        width: 200px;
+        margin: 10px;
+        padding-left: 300px;
+    }
+    
+    .searchbar {
+        padding: 50px 50px;
+        align-items: center;
+    }
+    .searchbutton {
+        padding: 6px 10px;
+        background: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    
+    .fourcircles {
+        display: grid;
+        text-align: center;
+        align-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px 30px;
+        width: 100px;
+        margin: 10px;
+        padding-left: 300px;
+        margin-top: 50px;
+        
+    }
+    .circles {
+        display: inline-block;
+        background-color:#ada9d4;
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+        
+    }
+    .circular_image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        display:inline-block;
+        vertical-align:middle;
+    }
+    .Rows{
+        display: flex;
+        padding: 0 10%;
+        align-items: center;
+        
+    }
+    .changeUsername{
+        background-color: #3853a4;
+        align-self: stretch;
+        align-content: center;
+        padding: 10px;
+        margin: 0 5% 0 0;
+    }
+    .resetPassword{
+        background-color: #6aa0cf;
+        align-self: stretch;
+        align-content: center;
+        padding: 10px;
+        margin: 0 5% 0 0;
+    }
+    
+    .changeUser{
+        background-color: #7373b6;
+        align-self: stretch;
+        align-content: center;
+        padding: 10px;
+    }
+    .arrow{
+        background-color: transparent;
+        border: none;
+    }
+    .log{
+        background-color: transparent;
+        border: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        color: #cf9cc6;
+        text-decoration: none;
+        font-size: medium;
+    }
+    .Week{
+        background-color: #3853a4;
+        align-self: stretch;
+        align-content: center;
+        padding: 10px;
+    }
+    .Month{
+        background-color: #ada9d4;
+        align-self: stretch;
+        align-content: center;
+        padding: 10px;
+    }
