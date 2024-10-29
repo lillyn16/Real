@@ -22,9 +22,6 @@
 
 .section-text-container {
     background-color: #7374b5;
-    /* display: flex; */
-    /* display: inline-block; */
-    /* align-content: center; */
     text-align: left;
     padding: 24px;
     height: auto;
@@ -37,18 +34,11 @@
 }
 
 .fourcircles {
-    /* display: grid; */
     display: flex;
     justify-content: space-between;
     text-align: center;
     align-items: center;
-    /* grid-template-columns: repeat(4, 1fr); */
-    /* grid-gap: 30px 30px; */
     width: 100%;
-    /* margin: 10px; */
-    /* padding-left: 300px; */
-    margin-top: 50px;
-    
 }
 .member-description {
     padding-top: 16px;

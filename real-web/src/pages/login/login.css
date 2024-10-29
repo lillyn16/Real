@@ -50,14 +50,7 @@ input:hover {
     text-decoration: none;
 }
 button {
-    color: #ffffff;
-    background-color: #40047c;
-    padding: 8px 24px;
     font-family: american typewriter, serif;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    border-radius: 4px;
-    font-weight: 600;
 }
 .submit-button-container:hover {
     cursor: pointer;
