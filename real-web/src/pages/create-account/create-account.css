@@ -1,0 +1,29 @@
+.create-account-container {
+    width: 100%;
+    background-image: linear-gradient(#e6c3d9, #603ead);
+    font-family: american typewriter, serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+.create-account-header {
+    padding: 40px;
+    font-size: 40px;
+}
+form {
+    padding-left: 40px;
+}
+input {
+    margin-bottom: 16px;
+}
+button {
+    color: #ffffff;
+    background-color: #40047c;
+    padding: 8px 24px;
+    font-family: american typewriter, serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    font-weight: 600;
+}
