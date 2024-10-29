@@ -56,7 +56,7 @@ const LoginPage = () => {
               </div>
               <div className='submit-button-container'>
                 <Link to="/forgot-password">forgot password?</Link>
-                <button type='button' onClick={login}>log in</button>
+                <button className='real-button' type='button' onClick={login}>log in</button>
               </div>
               {errorMessage && <div className='error-message'>{errorMessage}</div>}
               <hr className='break' />
@@ -65,7 +65,7 @@ const LoginPage = () => {
                     don't have an account?
                 </div>
                 <div className='sign-up-button-container'>
-                  <button type='button' onClick={createAccount}>sign up</button>
+                  <button className='real-button' type='button' onClick={createAccount}>sign up</button>
                 </div>
               </div>
             </div>

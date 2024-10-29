@@ -6,6 +6,7 @@ import CreateAccountPage from './pages/create-account/create-account';
 import ForgotPasswordPage from './pages/forgot-password/forgot-password';
 import AboutUsPage from './pages/about-us/about-us';
 import Footer from './components/footer/footer';
+import Header from './components/header/header';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
   return (
       <div>
+        {showHeaderAndFooter && <Header />}
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
 

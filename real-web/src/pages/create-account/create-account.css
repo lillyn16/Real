@@ -17,7 +17,7 @@ form {
 input {
     margin-bottom: 16px;
 }
-button {
+.real-button {
     color: #ffffff;
     background-color: #40047c;
     padding: 8px 24px;
