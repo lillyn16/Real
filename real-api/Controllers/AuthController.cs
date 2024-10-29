@@ -1,35 +1,57 @@
 using Microsoft.AspNetCore.Mvc;
-using real_api.BLL;
+using RealApi.BLL;
+using RealApi.Models;
+using RealApi.Services; 
 
-namespace real_api.Controllers
+namespace RealApi.Controllers
 {
+   [ApiController]
     [Route("api/[controller]")]
-    [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthService _authService;
+        private readonly UserService _userService;
 
-        public AuthController(IAuthService authService)
+        public AuthController(UserService userService)
         {
-            _authService = authService;
+            _userService = userService;
+        }
+
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] RegisterDto dto)
+        {
+            try
+            {
+                var user = _userService.CreateUser(
+                    dto.Username, dto.Password, 
+                    dto.SecurityQuestion, dto.SecurityAnswer);
+                return Ok(new { user.Id, user.Username });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest request)
+        public IActionResult Login([FromBody] LoginDto dto)
         {
-            
-            // Validate user credentials (connect to database)
-            if (request.Username == "test" && request.Password == "password") // Replace with actual validation
-            {
-                var token = _authService.GenerateToken(request.Username);
-                return Ok(new { Token = token });
-            }
+            var user = _userService.Authenticate(dto.Username, dto.Password);
+            if (user == null)
+                return Unauthorized("Invalid username or password");
 
-            return Unauthorized();
+            return Ok("Login successful");
         }
     }
 
-    public class LoginRequest
+    public class RegisterDto
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string SecurityQuestion { get; set; }
+        public string SecurityAnswer { get; set; }
+    }
+
+    public class LoginDto
     {
         public string Username { get; set; }
         public string Password { get; set; }

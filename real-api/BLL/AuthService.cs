@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace real_api.BLL
+namespace RealApi.BLL
 {
     public interface IAuthService
     {

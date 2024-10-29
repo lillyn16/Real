@@ -3,7 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using real_api.BLL;
+using RealApi.BLL;
+using RealApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,12 +14,11 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 // Configure CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", corsBuilder =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        corsBuilder.WithOrigins("http://localhost:3000") // React frontend origin
-                   .AllowAnyHeader()
-                   .AllowAnyMethod()
-                   .AllowCredentials(); // Allow cookies/auth headers
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
 
@@ -45,7 +45,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
+builder.Services.AddSingleton<UserService>();
 
 // Add Controllers and Swagger
 builder.Services.AddControllers();
@@ -62,9 +62,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-app.UseCors("AllowReactApp"); // Use the configured CORS middleware
+// CORS should be placed before UseAuthentication and UseAuthorization
+app.UseCors("AllowAll"); // Use the configured CORS middleware
 
+app.UseHttpsRedirection();
 app.UseAuthentication(); // Authentication middleware
 app.UseAuthorization();  // Authorization middleware
 
