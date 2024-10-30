@@ -6,7 +6,7 @@ const ForgotPasswordPage = () => {
     return (
         <div className="forgot-password-container">
              <h1>Reset Password</h1>
-            <form>
+            {/* <form>
                 <label for="Username">Username:</label><br />
                 <input class="textbox" type="text" id="Username" name="Username" /><br />
                 <label for="SecurityQ">Security Question:</label><br />
@@ -21,7 +21,7 @@ const ForgotPasswordPage = () => {
                     <div><a href="/html/login.html" class="return">Back to Login</a></div>
                     <input class="buttons" type="submit" value="Login" />
                 </div>
-            </form>
+            </form> */}
             {/* <img class="vines" src={vinesImg} alt="vines" /> */}
         </div>
   );

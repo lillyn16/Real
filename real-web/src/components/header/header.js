@@ -15,10 +15,13 @@ const Header = () => {
   return (
     <header>
         <div className='logo-container'>
-            <img class="logo" src={logoLight} alt="logo" />
+            <img className="logo" src={logoLight} alt="logo" />
             <div className='website-name'>REAL</div>
         </div>
         <div className='page-tabs'>
+            <div className='tab'>
+                <Link to='/home'>Home</Link>
+            </div>
             <div className='tab'>
                 <Link to='/about-us'>About</Link>
             </div>
