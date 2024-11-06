@@ -26,6 +26,8 @@ namespace RealApi.Controllers
             DateTime ovulationStart = phase.LastPeriodStart.AddDays(phase.CycleLength / 2 - 2); // cycle length / 2 and sets date to two days before
             DateTime ovulationEnd = ovulationStart.AddDays(4); // Approx 4-day fertile window
 
+
+            DateTime currentDate = DateTime.Now;
             // Determine the current phase
             string currentPhase;
             double daysSinceLastPeriod = (currentDate - phase.LastPeriodStart).TotalDays;
