@@ -1,0 +1,78 @@
+header {
+    height: 80px;
+    background-color: #40047c;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-container {
+    display: flex;
+    padding-left: 24px;
+}
+.logo {
+    width: 50px;
+}
+.website-name {
+    display: flex;
+    height: 100%;
+    align-self: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 4px;
+}
+.page-tabs {
+    display: flex;
+    padding-right: 24px;
+    align-items: center;
+    font-size: 18px;
+}
+.tab {
+    position: relative;
+}
+.dropdown-toggle {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 300;
+}
+.dropdown-toggle:hover {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+button.dropdown-item {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}

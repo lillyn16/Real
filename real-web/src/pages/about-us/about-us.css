@@ -1,0 +1,59 @@
+.about-us-container {
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-us-content {
+    max-width: 1000px;
+}
+
+.section {
+    padding-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+.section-text-container {
+    background-color: #7374b5;
+    text-align: left;
+    padding: 24px;
+    height: auto;
+    width: auto;
+    /* max-width: 1200px; */
+}
+
+.section-text {
+    font-size: 18px;
+}
+
+.fourcircles {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+.member-description {
+    padding-top: 16px;
+    height: 80px;
+    width: 200px;
+}
+.name {
+    font-size: 18px;
+    font-weight: bold;
+}
+.circular_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display:inline-block;
+    vertical-align:middle;
+}

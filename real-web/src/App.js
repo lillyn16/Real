@@ -1,42 +1,39 @@
 // import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import LoginPage from './components/login/login';
-import CreateAccountPage from './components/create-account/create-account';
-import ForgotPasswordPage from './components/forgot-password/forgot-password';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import LoginPage from './pages/login/login';
+import CreateAccountPage from './pages/create-account/create-account';
+import ForgotPasswordPage from './pages/forgot-password/forgot-password';
+import AboutUsPage from './pages/about-us/about-us';
+import Footer from './components/footer/footer';
+import Header from './components/header/header';
 
 
 function App() {
+  const location = useLocation();
+  const showHeaderAndFooter = location.pathname !== '/login';
+
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    <Router>
       <div>
+        {showHeaderAndFooter && <Header />}
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
 
           <Route path="/login" element={<LoginPage />} />
           <Route path="/create-account" element={<CreateAccountPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
 
         </Routes>
+        {showHeaderAndFooter && <Footer />}
       </div>
-    </Router>
   );
 }
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;

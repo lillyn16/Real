@@ -1,7 +1,10 @@
-public class User {
-    public int Id { get; set; } 
-    public string Username { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
-    public string SecturityQuestion { get; set;} = string.Empty;
-    public string SecurityAnswer {get; set;} = string.Empty;
+namespace RealApi.Models 
+{
+    public class User {
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string Username { get; set; }
+        public string PasswordHash { get; set; }
+        public string SecurityQuestion { get; set; } 
+        public string SecurityAnswerHash { get; set; }
+    }
 }
