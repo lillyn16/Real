@@ -109,6 +109,11 @@
         align-self: stretch;
         align-content: center;
     }
+    .loginbutton{
+        border-left: solid;
+        align-self: stretch;
+        align-content: center;
+    }
     table {
         padding: 15px;
         justify-content: space-evenly;
