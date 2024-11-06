@@ -23,13 +23,38 @@ namespace RealApi.Controllers
             DateTime nextPeriodStart = phase.LastPeriodStart.AddDays(phase.CycleLength);
             DateTime nextPeriodEnd = nextPeriodStart.AddDays(phase.PeriodLength);
 
-            var isCurrentWeekPeriod = DateTime.Now >= nextPeriodStart && DateTime.Now <= nextPeriodEnd;
+            DateTime ovulationStart = phase.LastPeriodStart.AddDays(phase.CycleLength / 2 - 2); // cycle length / 2 and sets date to two days before
+            DateTime ovulationEnd = ovulationStart.AddDays(4); // Approx 4-day fertile window
+
+            // Determine the current phase
+            string currentPhase;
+            double daysSinceLastPeriod = (currentDate - phase.LastPeriodStart).TotalDays;
+
+            if (daysSinceLastPeriod <= phase.PeriodLength)
+            {
+                currentPhase = "Menstrual";
+            }
+            else if (daysSinceLastPeriod > phase.PeriodLength && daysSinceLastPeriod <= (phase.CycleLength / 2) - 2)
+            {
+                currentPhase = "Follicular";
+            }
+            else if (daysSinceLastPeriod > (phase.CycleLength / 2) - 2 && daysSinceLastPeriod <= (phase.CycleLength / 2) + 2)
+            {
+                currentPhase = "Ovulatory";
+            }
+            else
+            {
+                currentPhase = "Luteal";
+            }
 
             return Ok(new
             {
+                currentPhase,
                 nextPeriodStart,
                 nextPeriodEnd,
-                isCurrentWeekPeriod
+                ovulationStart,
+                ovulationEnd,
+                isCurrentWeekPeriod = currentDate >= phase.LastPeriodStart && currentDate <= phase.LastPeriodStart.AddDays(phase.PeriodLength)
             });
         }
     }

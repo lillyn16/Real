@@ -19,6 +19,8 @@ const WeeklyCalendarView = () => {
   const renderDays = () => {
     const today = new Date();
     const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay())); // Sunday
+    // console.log(today)
+    // console.log(startOfWeek)
 
     return Array.from({ length: 7 }, (_, i) => {
       const day = new Date(startOfWeek);
