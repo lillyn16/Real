@@ -1,11 +1,3 @@
-/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.csproj.AssemblyReference.cache
-/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.GeneratedMSBuildEditorConfig.editorconfig
-/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.AssemblyInfoInputs.cache
-/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.AssemblyInfo.cs
-/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.csproj.CoreCompileInputs.cache
-/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.MvcApplicationPartsAssemblyInfo.cs
-/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.MvcApplicationPartsAssemblyInfo.cache
-/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.sourcelink.json
 /Users/rachelbasinski/dev/CS478/Real/real-api/bin/Debug/net8.0/appsettings.Development.json
 /Users/rachelbasinski/dev/CS478/Real/real-api/bin/Debug/net8.0/appsettings.json
 /Users/rachelbasinski/dev/CS478/Real/real-api/bin/Debug/net8.0/real-api
@@ -28,6 +20,14 @@
 /Users/rachelbasinski/dev/CS478/Real/real-api/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/rachelbasinski/dev/CS478/Real/real-api/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/rachelbasinski/dev/CS478/Real/real-api/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.csproj.AssemblyReference.cache
+/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.AssemblyInfoInputs.cache
+/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.AssemblyInfo.cs
+/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.csproj.CoreCompileInputs.cache
+/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.MvcApplicationPartsAssemblyInfo.cs
+/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.MvcApplicationPartsAssemblyInfo.cache
+/Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/real-api.sourcelink.json
 /Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/staticwebassets.build.json
 /Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/staticwebassets.development.json
 /Users/rachelbasinski/dev/CS478/Real/real-api/obj/Debug/net8.0/staticwebassets/msbuild.real-api.Microsoft.AspNetCore.StaticWebAssets.props
