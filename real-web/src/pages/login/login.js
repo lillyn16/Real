@@ -50,11 +50,11 @@ const LoginPage = () => {
               let's keep it REAL
             </div>
             <div className='login-form'>
-              <div className='input-container'>
+              <div className='login-input-container'>
                 <label>username</label>
                 <input type='text' value={username} onChange={(e) => setUsername(e.target.value)}></input>
               </div>
-              <div className='input-container'>
+              <div className='login-input-container'>
                 <label>password</label>
                 <input type='text' value={password} onChange={(e) => setPassword(e.target.value)}></input>
               </div>

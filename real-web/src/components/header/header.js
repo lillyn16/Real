@@ -19,24 +19,24 @@ const Header = () => {
             <div className='website-name'>REAL</div>
         </div>
         <div className='page-tabs'>
-            <div className='tab'>
-                <Link to='/home'>Home</Link>
-            </div>
-            <div className='tab'>
-                <Link to='/about-us'>About</Link>
-            </div>
-            <div className="tab">
+                <Link className='tab' to='/home'>Home</Link>
+                <Link className='tab' to='/calendar'>Calendar</Link>
+                <Link className='tab' to='/symptoms'>Symptoms</Link>
+                <Link className='tab' to='/learn'>Learn</Link>
+                <Link className='tab' to='/about-us'>About</Link>
+                <Link className='tab' to='/profile'>Profile</Link>
+            {/* <div className="tab">
                 <button className="dropdown-toggle" 
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >Profile</button>
                 {isDropdownOpen && (
-                <div className="dropdown-menu">
+                <div className="dropdown-menu"> */}
                     {/* <Link to="/profile" className="dropdown-item">Profile</Link> */}
-                    <Link to="/forgot-password" className="dropdown-item">Change Password</Link>
-                    <button onClick={logout} className="dropdown-item">Logout</button>
-                </div>
+                    {/* <Link to="/forgot-password" className="dropdown-item">Change Password</Link>
+                    <button onClick={logout} className="dropdown-item">Logout</button> */}
+                {/* </div>
                 )}
-            </div>
+            </div> */}
         </div>
         {/* <a class="selected" href="/html/HOME.html">Home</a>
         <a href="/html/calendar.html">Calendar</a>
