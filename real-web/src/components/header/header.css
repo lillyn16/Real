@@ -44,7 +44,7 @@ header {
     cursor: pointer !important;
 }
 
-/* .dropdown-toggle {
+.dropdown-toggle {
     background-color: transparent;
     color: white;
     border: none;
@@ -64,6 +64,7 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     overflow: hidden;
+    width: 180px;
 }
 
 .dropdown-item {
@@ -86,9 +87,13 @@ button.dropdown-item {
     background-color: transparent;
     padding: 10px 20px;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .dropdown-item:hover {
     background-color: #f1f1f1;
-} */
+}
+
+.fa-sign-out {
+    padding-right: 8px;
+}

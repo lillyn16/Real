@@ -15,7 +15,7 @@ namespace RealApi.Controllers
             var phase = new Phase
             {
                 UserId = userId,
-                LastPeriodStart = DateTime.Now.AddDays(-15), // Example start
+                LastPeriodStart = DateTime.Now.AddDays(-29), // Example start
                 CycleLength = 28,
                 PeriodLength = 5
             };
@@ -56,7 +56,7 @@ namespace RealApi.Controllers
                 nextPeriodEnd,
                 ovulationStart,
                 ovulationEnd,
-                isCurrentWeekPeriod = currentDate >= phase.LastPeriodStart && currentDate <= phase.LastPeriodStart.AddDays(phase.PeriodLength)
+                isCurrentWeekPeriod = currentDate >= nextPeriodStart && currentDate <= nextPeriodEnd
             });
         }
     }

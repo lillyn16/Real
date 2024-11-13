@@ -31,3 +31,12 @@
     border: none;
     margin: 10px 0;
   }
+
+  .vine-img-container {
+    width: 100%;
+    z-index: 99;
+  }
+
+  .vine-img {
+    width: 100px;
+  }

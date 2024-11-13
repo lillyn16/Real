@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import LoginPage from './pages/login/login';
 import CreateAccountPage from './pages/create-account/create-account';
@@ -12,6 +13,7 @@ import ProfilePage from './pages/profile/profile';
 import CalendarPage from './pages/calendar/calendar';
 import SymptomsPage from './pages/symptoms/symptoms';
 import EducationPage from './pages/education/education';
+
 
 function App() {
   const location = useLocation();
