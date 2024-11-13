@@ -6,8 +6,6 @@ const EducationPage = () => {
   return (
     <div className="education-container">
     </div>
-
-    
   );
 };
 
