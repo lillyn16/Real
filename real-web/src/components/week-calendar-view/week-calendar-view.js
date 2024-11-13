@@ -18,20 +18,25 @@ const WeeklyCalendarView = () => {
 
   const renderDays = () => {
     const today = new Date();
-    const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay())); // Sunday
-    // console.log(today)
+    console.log(today)
+
+    const startOfWeek = new Date(today)
+    startOfWeek.setDate(today.getDate() - today.getDay()); // Sunday
     // console.log(startOfWeek)
 
     return Array.from({ length: 7 }, (_, i) => {
       const day = new Date(startOfWeek);
       day.setDate(startOfWeek.getDate() + i);
 
-      const isHighlighted = isPeriodWeek && day >= new Date(periodData?.nextPeriodStart) &&
-                            day <= new Date(periodData?.nextPeriodEnd);
+    //   const isHighlighted = isPeriodWeek && day >= new Date(periodData?.nextPeriodStart) &&
+    //                         day <= new Date(periodData?.nextPeriodEnd);
+
+    const isHighlighted = day.toDateString() === today.toDateString();
 
       return (
         <div key={i} className={`day ${isHighlighted ? 'highlight' : ''}`}>
           {day.toDateString()}
+          <hr className='break' />
         </div>
       );
     });
