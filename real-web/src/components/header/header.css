@@ -18,6 +18,7 @@ header {
     font-size: 32px;
     font-weight: bold;
     padding-left: 4px;
+    letter-spacing: 1.5px;
 }
 .page-tabs {
     display: flex;
@@ -27,8 +28,23 @@ header {
 }
 .tab {
     position: relative;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    z-index: 99;
+    pointer-events: auto;
 }
-.dropdown-toggle {
+.tab:focus {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.tab:hover {
+    background-color: #320262;
+    cursor: pointer !important;
+}
+
+/* .dropdown-toggle {
     background-color: transparent;
     color: white;
     border: none;
@@ -75,4 +91,4 @@ button.dropdown-item {
 
 .dropdown-item:hover {
     background-color: #f1f1f1;
-}
+} */

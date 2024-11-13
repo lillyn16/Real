@@ -12,26 +12,30 @@ const LoginPage = () => {
   const [errorMessage, setMessage] = useState('');
 
   const login = async (e) => {
-    e.preventDefault();
+    navigate('/home');
 
-    try {
-      const response = await axios.post('http://localhost:5154/api/auth/login', {
-        username,
-        password,
-      });
+    // e.preventDefault();
 
-      // Assuming your backend returns a success message or user data
-      setMessage('Login successful!');
-    } catch (error) {
-      // Improved error handling with Axios
-      if (error.response) {
-        // Server responded with a status other than 200 range
-        setMessage(`Login failed: ${error.response.data}`);
-      } else {
-        // Network error or request setup error
-        setMessage(`Error: ${error.message}`);
-      }
-    }
+    // try {
+    //   const response = await axios.post('http://localhost:5154/api/auth/login', {
+    //     username,
+    //     password,
+    //   });
+
+    //   // Assuming your backend returns a success message or user data
+    //   setMessage('Login successful!');
+    //   navigate('/home');
+
+    // } catch (error) {
+    //   // Improved error handling with Axios
+    //   if (error.response) {
+    //     // Server responded with a status other than 200 range
+    //     setMessage(`Login failed: ${error.response.data}`);
+    //   } else {
+    //     // Network error or request setup error
+    //     setMessage(`Error: ${error.message}`);
+    //   }
+    // }
   };
 
   const createAccount = () => {
@@ -46,11 +50,11 @@ const LoginPage = () => {
               let's keep it REAL
             </div>
             <div className='login-form'>
-              <div className='input-container'>
+              <div className='login-input-container'>
                 <label>username</label>
                 <input type='text' value={username} onChange={(e) => setUsername(e.target.value)}></input>
               </div>
-              <div className='input-container'>
+              <div className='login-input-container'>
                 <label>password</label>
                 <input type='text' value={password} onChange={(e) => setPassword(e.target.value)}></input>
               </div>

@@ -1,0 +1,33 @@
+.weekly-view-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.days-container {
+    display: grid;
+    grid-template-columns: repeat(7, 140px);
+    /* gap: 8px; */
+    width: 100%;
+    justify-content: center;
+  }
+
+  .day {
+    width: 140px;
+    height: 300px;
+    background-color: #7a60a8;
+    padding: 10px 0;
+    border: 1px solid #40047c;
+  }
+
+  .day.highlight {
+    background-color: #7374b5;
+    font-weight: bold;
+  }
+
+  .break {
+    height: 1px;
+    background: #40047c;
+    border: none;
+    margin: 10px 0;
+  }

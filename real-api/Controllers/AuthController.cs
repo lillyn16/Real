@@ -5,7 +5,7 @@ using RealApi.Services;
 
 namespace RealApi.Controllers
 {
-   [ApiController]
+    [ApiController]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {

@@ -24,7 +24,7 @@
 .login-form {
     min-width: 310px;
 }
-.input-container {
+.login-input-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;

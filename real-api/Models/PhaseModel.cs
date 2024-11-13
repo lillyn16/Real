@@ -1,8 +1,9 @@
 namespace RealApi.Models 
 {
     public class Phase {
-        public string StartDate {get; set;} = string.Empty;
-        public string EndDate {get; set;} = string.Empty;
-        public string Name {get; set;} = string.Empty;
+        public int UserId { get; set; }
+        public DateTime LastPeriodStart { get; set; }
+        public int CycleLength { get; set; } // Typically 28 days
+        public int PeriodLength { get; set; } // Typically 5-7 days
     }
 }
