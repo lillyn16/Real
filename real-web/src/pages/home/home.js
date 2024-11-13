@@ -6,7 +6,26 @@ const HomePage = () => {
     <div className="home-page">
       <h1>Welcome to REAL</h1>
       <WeeklyCalendarView /> 
-    </div>
+      <div>
+      </div>
+          <br></br>
+          <br></br>
+          <div class="boxleft">
+            <h1>Log Symptoms</h1>
+            <p>-----------------------------------------</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+          </div>
+          <div class='box'></div>
+          <div class='boxright'>
+            <h1>Tracker</h1>
+            <p>-----------------------------------------</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            </div>
+          <br></br>
+          <br></br>
+          <br></br>
+      </div>
+    
   );
 };
 
