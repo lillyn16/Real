@@ -1,0 +1,14 @@
+# Node modules (frontend)
+real-web/node_modules
+real-web/.env
+
+# Node modules (root)
+node_modules
+.env
+
+# Dotnet (backend)
+real-api/bin
+real-api/obj
+
+# Log files
+*.log
