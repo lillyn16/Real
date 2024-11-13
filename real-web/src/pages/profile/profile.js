@@ -5,6 +5,8 @@ import './profile.css'
 const ProfilePage = () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState('exampleUsername');
+    const [securityQuestion, setSecurityQuestion] = useState('');
+    const [securityAnswer, setSecurityAnswer] = useState('');
 
     const logout = () => {
         navigate('/login');
@@ -28,6 +30,27 @@ const ProfilePage = () => {
                 <div className='profile-input-container'>
                     <label>username</label>
                     <input type='text' value={username} onChange={(e) => setUsername(e.target.value)}></input>
+                </div>
+                <div className='profile-input-container'>
+                    <label htmlFor="securityQuestion">Security Question</label><br />
+                    <select
+                    className="textbox"
+                    id="securityQuestion"
+                    value={securityQuestion}
+                    onChange={(e) => setSecurityQuestion(e.target.value)}
+                    >
+                    <option value="" disabled>
+                        -- Select a question --
+                    </option>
+                    <option value="Q1">What is your favorite color?</option>
+                    <option value="Q2">What is your mother's maiden name?</option>
+                    <option value="Q3">What was your first pet's name?</option>
+                    <option value="Q4">What street did you grow up on?</option>
+                    </select>
+                </div>
+                <div className='profile-input-container'>
+                    <label>answer</label>
+                    <input type='text' value={securityAnswer} onChange={(e) => setSecurityAnswer(e.target.value)}></input>
                 </div>
                 <div className='update-button-container'>
                     <button className="real-button"
