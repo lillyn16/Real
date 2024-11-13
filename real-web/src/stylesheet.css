@@ -110,7 +110,7 @@
         align-content: center;
     }
     table {
-        padding: 15px;
+        /*padding: 15px;*/
         justify-content: space-evenly;
         text-align: left;
         min-width: 100%;
@@ -241,6 +241,7 @@
         display: flex;
         padding: 0 10%;
         align-items: center;
+        justify-content: center;
         
     }
     .changeUsername{
@@ -268,15 +269,15 @@
         background-color: transparent;
         border: none;
     }
-    .log{
+    /*.log{
         background-color: transparent;
         border: none;
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
         color: #cf9cc6;
         text-decoration: none;
-        font-size: medium;
-    }
+        font-size: small;
+    }*/
     .Week{
         background-color: #3853a4;
         align-self: stretch;
