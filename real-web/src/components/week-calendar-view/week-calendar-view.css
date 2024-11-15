@@ -7,11 +7,11 @@
 .days-container {
     display: grid;
     grid-template-columns: repeat(7, 140px);
-    /* gap: 8px; */
     width: 100%;
     justify-content: center;
-  }
-  .logrow {
+}
+
+.logrow {
     display: grid;
     grid-template-columns: repeat(7, 140px);
     /* gap: 8px; */
@@ -23,41 +23,57 @@
     background-color:#3853a4;
     color:white;
     min-height: max-content;
-  }
-  .logday{
+}
+
+.logday{
     border: 1px solid #40047c;
     padding: 0 5px;
-  }
+}
 
-  .day {
+.month-container {
+    font-size: 24px;
+    font-weight: 600;
+    background-color: #7a60a8;
+    width: 980px;
+    padding: 10px 0;
+    border: 1px solid #40047c;
+    border-bottom: none;
+}
+
+.day {
     width: 140px;
     height: 300px;
     background-color: #7a60a8;
     padding: 10px 0;
     border: 1px solid #40047c;
-  }
+}
 
-  .day.highlight {
+.day.highlight {
     background-color: #7374b5;
     font-weight: bold;
-  }
+}
 
-  .break {
+.date-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-hr {
     height: 1px;
     background: #40047c;
     border: none;
     margin: 10px 0;
-  }
+}
 
-  .vine-img-container {
+.vine-img-container {
     width: 100%;
     z-index: 99;
-  }
+}
 
-  .vine-img {
+.vine-img {
     width: 100px;
-  }
-  .log{
+}
+.log{
     background-color: transparent;
     border: none;
     font-family: 'Courier New', Courier, monospace;
