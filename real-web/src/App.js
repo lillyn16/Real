@@ -11,13 +11,13 @@ import Header from './components/header/header';
 import HomePage from './pages/home/home';
 import ProfilePage from './pages/profile/profile';
 import CalendarPage from './pages/calendar/calendar';
-import SymptomsPage from './pages/symptoms/symptoms';
+import SymptomsPage from './components/symptoms/symptoms';
 import EducationPage from './pages/education/education';
 
 
 function App() {
   const location = useLocation();
-  const showHeaderAndFooter = location.pathname !== '/login' && location.pathname !== '/create-account';
+  const showHeaderAndFooter = location.pathname !== '/login';
 
   return (
       <div className='real-app-container'>

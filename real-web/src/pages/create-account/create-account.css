@@ -1,13 +1,16 @@
 .create-account-container {
     overflow: hidden;
     padding-bottom: 40px;
+
 }
 .create-account-header {
     padding: 40px;
     font-size: 40px;
+    font-weight: 600;
 }
-form {
+.create-account-form {
     padding-left: 40px;
+
 }
 input {
     margin-bottom: 16px;
@@ -16,7 +19,7 @@ input {
     color: #ffffff;
     background-color: #40047c;
     padding: 8px 24px;
-    font-family: american typewriter, serif;
+    font-family:'Courier New', Courier, monospace;
     font-size: 16px;
     letter-spacing: 0.5px;
     border-radius: 4px;

@@ -4,7 +4,7 @@
     justify-content: space-between;
     width: 100%;
     height: 100vh;
-    font-family: american typewriter, serif;
+    font-family:'Courier New', Courier, monospace;
     color: #ffffff;
     letter-spacing: 0.5px;
     overflow: hidden;
@@ -50,7 +50,7 @@ input:hover {
     text-decoration: none;
 }
 button {
-    font-family: american typewriter, serif;
+    font-family:'Courier New', Courier, monospace;
 }
 .submit-button-container:hover {
     cursor: pointer;
@@ -59,7 +59,7 @@ button {
     height: 1px;
     background: #40047c;
     border: none;
-    margin: 40px 0;
+    margin: 40px 0 !important;
 }
 .new-user-container {
     display: flex;

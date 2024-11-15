@@ -34,6 +34,9 @@ header {
     z-index: 99;
     pointer-events: auto;
 }
+.tab.button {
+    height: 80px;
+}
 .tab:focus {
     font-weight: 700;
     text-decoration: underline;
@@ -50,6 +53,8 @@ header {
     border: none;
     font-size: 18px;
     font-weight: 300;
+    height: 100%;
+    padding: 0 20px;
 }
 .dropdown-toggle:hover {
     cursor: pointer;
@@ -64,7 +69,7 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     overflow: hidden;
-    width: 180px;
+    width: 185px;
 }
 
 .dropdown-item {
@@ -82,6 +87,8 @@ header {
 }
 
 button.dropdown-item {
+    display: flex;
+    align-items: center;
     border: none;
     width: 100%;
     background-color: transparent;
@@ -94,6 +101,18 @@ button.dropdown-item {
     background-color: #f1f1f1;
 }
 
+.fa-chevron-down {
+    font-size: 12px;
+    padding-left: 6px;
+}
 .fa-sign-out {
+    font-size: 12px;
     padding-right: 8px;
+}
+
+.dropdown-hr {
+    margin: 0;
+    height: 1px;
+    background-color: #dddddd;
+    border: none;
 }

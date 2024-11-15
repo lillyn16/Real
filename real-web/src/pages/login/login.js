@@ -63,7 +63,7 @@ const LoginPage = () => {
                 <button className='real-button' type='button' onClick={login}>log in</button>
               </div>
               {errorMessage && <div className='error-message'>{errorMessage}</div>}
-              <hr className='break' />
+              <hr className='break'></hr>
               <div className='new-user-container'>
                 <div className='new-user-label'>
                     don't have an account?

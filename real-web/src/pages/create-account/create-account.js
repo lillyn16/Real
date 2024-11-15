@@ -32,7 +32,7 @@ const CreateAccountPage = () => {
   return (
     <div className="create-account-container">
       <div className="create-account-header">Create Account</div>
-      <form>
+      <form className='create-account-form'>
         <label htmlFor="username">Username</label><br />
         <input
           className="textbox"
