@@ -80,6 +80,7 @@ button {
     position: absolute;
     bottom: 225px;
     left: 25px;
+    
 }
 img {
     width: 500px;
@@ -102,3 +103,18 @@ img {
 .error-message {
     padding-top: 16px;
 }
+/*@media only screen and (max-width: 425px) {
+    .background-image{
+        position: unset;
+        display: flex;
+        justify-content: flex-start;
+        height: 50%;
+        max-height: 500px;
+        margin-bottom: 225px;
+    }
+  }*/
+  @media only screen and (max-width: 1124px) {
+    img {
+        visibility:hidden;
+    }
+  }
