@@ -1,0 +1,11 @@
+.submitbutton{
+    background-color: #3853a4;
+    color: white;
+    width: max-content;
+    justify-self: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.symLabel{
+    font-weight: bold;
+}

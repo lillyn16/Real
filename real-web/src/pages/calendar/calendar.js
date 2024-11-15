@@ -5,7 +5,7 @@ const CalendarPage = () => {
   return (
     <div className="calendar-container">
       <div className="Rows">
-        <button><i class="fa-solid fa-chevron-left"></i></button>
+        <button className="arrowbutton"><i class="fa-solid fa-chevron-left"></i></button>
         <div>
           <WeeklyCalendarView /> 
           <table>
@@ -88,7 +88,7 @@ const CalendarPage = () => {
             </tr>
           </table>
         </div>
-        <button><i class="fa-solid fa-chevron-right"></i></button>
+        <button className="arrowbutton"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
     </div>
   );

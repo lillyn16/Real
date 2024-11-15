@@ -88,6 +88,7 @@
         background-color: #7374b5;
         width: max-content;
         margin: auto;
+        border: inset #3853a4;
     }
     .symptomsLine{
         display: inline;
@@ -289,4 +290,9 @@
         align-self: stretch;
         align-content: center;
         padding: 10px;
+    }
+    .arrowbutton{
+        background-color: #3853a4;
+        color: #e0aecb;
+        margin: 10px;
     }
