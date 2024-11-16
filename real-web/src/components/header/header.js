@@ -32,7 +32,6 @@ const Header = () => {
         <div className='page-tabs'>
             <Link className='tab' to='/home'>Home</Link>
             <Link className='tab' to='/calendar'>Calendar</Link>
-            <Link className='tab' to='/symptoms'>Symptoms</Link>
             <Link className='tab' to='/learn'>Learn</Link>
             <Link className='tab' to='/about-us'>About</Link>
             {/* <Link className='tab' to='/profile'>Profile</Link> */}
