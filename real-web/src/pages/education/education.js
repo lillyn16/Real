@@ -7,12 +7,8 @@ const EducationPage = () => {
   return (
     <div className="education-container">
       <h1>
-        Click on the type of information that would like to know more about or use the search bar to find what you need.
+        Here are some helpful links to learn about your cycle.
       </h1>
-      <div class="searchbar"> 
-        <input type="text" placeholder="Search..." name="search" size="40"></input>
-        <button class ="searchbutton">Search</button>
-      </div>
       <div class = "fourboxes">
                     <div class="boxleft">
                       <h1>Just Started Information</h1>
