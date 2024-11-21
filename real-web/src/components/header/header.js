@@ -8,7 +8,7 @@ const Header = () => {
     const navigate = useNavigate();
     const dropdownRef = useRef(null);
     const location = useLocation();
-    const showTabs = location.pathname !== '/create-account';
+    const showTabs = location.pathname !== '/create-account' && location.pathname !== '/welcome';
 
     const closeDropdown = (e) => {
         if (isDropdownOpen && !dropdownRef.current?.contains(e.target)) {

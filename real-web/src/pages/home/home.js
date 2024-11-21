@@ -4,7 +4,6 @@ import WeeklyCalendarView from '../../components/week-calendar-view/week-calenda
 const HomePage = () => {
   return (
     <div className="home-page">
-      <h1>Welcome to REAL</h1>
       <WeeklyCalendarView /> 
       <div>
       </div>

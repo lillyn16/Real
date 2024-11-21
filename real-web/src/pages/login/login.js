@@ -12,7 +12,7 @@ const LoginPage = () => {
   const [errorMessage, setMessage] = useState('');
 
   const login = async (e) => {
-    navigate('/home');
+    navigate('/welcome');
 
     // e.preventDefault();
 
@@ -52,11 +52,11 @@ const LoginPage = () => {
             <div className='login-form'>
               <div className='login-input-container'>
                 <label>username</label>
-                <input type='text' value={username} onChange={(e) => setUsername(e.target.value)}></input>
+                <input className='real-input' type='text' value={username} onChange={(e) => setUsername(e.target.value)}></input>
               </div>
               <div className='login-input-container'>
                 <label>password</label>
-                <input type='text' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <input className='real-input' type='text' value={password} onChange={(e) => setPassword(e.target.value)}></input>
               </div>
               <div className='submit-button-container'>
                 <Link to="/forgot-password">forgot password?</Link>
@@ -75,7 +75,7 @@ const LoginPage = () => {
             </div>
           </div>
           <div className='background-image'>
-            <img src={flourishPurpleImg} alt='Flourish purple' />
+            <img className='vines-img' src={flourishPurpleImg} alt='Flourish purple' />
           </div>
         </div>
         <div className='login-footer'>

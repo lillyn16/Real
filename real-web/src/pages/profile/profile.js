@@ -18,7 +18,7 @@ const ProfilePage = () => {
             <div className='profile-form'>
                 <div className='profile-input-container'>
                     <label>username</label>
-                    <input type='text' value={username} onChange={(e) => setUsername(e.target.value)}></input>
+                    <input className='real-input' type='text' value={username} onChange={(e) => setUsername(e.target.value)}></input>
                 </div>
                 <div className='profile-input-container'>
                     <label htmlFor="securityQuestion">security question</label>
@@ -35,7 +35,7 @@ const ProfilePage = () => {
                 </div>
                 <div className='profile-input-container'>
                     <label>answer</label>
-                    <input type='text' value={securityAnswer} onChange={(e) => setSecurityAnswer(e.target.value)}></input>
+                    <input className='real-input' type='text' value={securityAnswer} onChange={(e) => setSecurityAnswer(e.target.value)}></input>
                 </div>
                 <div className='update-button-container'>
                     <button className="real-button"

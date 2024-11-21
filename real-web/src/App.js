@@ -11,13 +11,13 @@ import Header from './components/header/header';
 import HomePage from './pages/home/home';
 import ProfilePage from './pages/profile/profile';
 import CalendarPage from './pages/calendar/calendar';
-import SymptomsPage from './pages/symptoms/symptoms';
 import EducationPage from './pages/education/education';
+import WelcomePage from './pages/welcome/welcome';
 
 
 function App() {
   const location = useLocation();
-  const showHeaderAndFooter = location.pathname !== '/login' && location.pathname !== '/create-account';
+  const showHeaderAndFooter = location.pathname !== '/login';
 
   return (
       <div className='real-app-container'>
@@ -34,8 +34,8 @@ function App() {
             <Route path='/about-us' element={<AboutUsPage />} />
             <Route path='/profile' element={<ProfilePage />} />
             <Route path='/calendar' element={<CalendarPage />} />
-            <Route path='/symptoms' element={<SymptomsPage />} />
             <Route path='/learn' element={<EducationPage />} />
+            <Route path='/welcome' element={<WelcomePage />} />
           </Routes>
         </div>
         <div className='real-footer'>
