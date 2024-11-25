@@ -1,0 +1,81 @@
+.welcome-page-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 70px;
+}
+
+.welcome-page-content {
+    max-width: 575px;
+}
+
+.welcome-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-header {
+    font-size: 38px;
+    font-weight: bold;
+    padding-bottom: 24px;
+    letter-spacing: 0.2px;
+}
+
+.welcome-header-subtext {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.skip-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skip-text {
+    line-height: 24px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+.welcome-hr {
+    height: 1px;
+    background: #40047c;
+    border: none;
+    margin: 40px 0;
+}
+
+.welcome-input-content {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome-input-label {
+    padding-bottom: 4px;
+    font-weight: bold;
+    width: 400px;
+}
+
+.rdrCalendarWrapper {
+    width: 400px;
+}
+
+.rdrMonth {
+    width: 28.667em;
+}
+
+.rdrDateInput input {
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.rdrMonthAndYearPickers select {
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.rdrMonthsVertical {
+    align-items: center;
+}

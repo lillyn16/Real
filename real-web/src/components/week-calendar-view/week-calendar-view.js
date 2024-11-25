@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './week-calendar-view.css';
-import periodVine from '../../images/PeriodVine.png'
+import periodVine from '../../images/periodVine.png'
 import { getPhase } from '../../services/api';
 
 

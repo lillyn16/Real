@@ -1,26 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './header.css';
 import logoLight from '../../images/logoLight.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const navigate = useNavigate();
+    const dropdownRef = useRef(null);
+    const location = useLocation();
+    const showTabs = location.pathname !== '/create-account' && location.pathname !== '/welcome';
+
+    const closeDropdown = (e) => {
+        if (isDropdownOpen && !dropdownRef.current?.contains(e.target)) {
+            setIsDropdownOpen(false);
+        }
+    }
+    document.addEventListener('mousedown', closeDropdown)
 
 
     const updateProfile = () => {
-        // Add logout logic here 
-        navigate('/profile'); // Redirect to login page
+        setIsDropdownOpen(false); 
+        navigate('/profile');
     };
 
     const changePassword = () => {
-        // Add logout logic here 
-        navigate('/forgot-password'); // Redirect to login page
+        setIsDropdownOpen(false); 
+        navigate('/forgot-password');
     };
 
     const logout = () => {
-        // Add logout logic here 
-        navigate('/login'); // Redirect to login page
+        setIsDropdownOpen(false); 
+        navigate('/login');
     };
 
   return (
@@ -29,35 +39,31 @@ const Header = () => {
             <img className="logo" src={logoLight} alt="logo" />
             <div className='website-name'>REAL</div>
         </div>
-        <div className='page-tabs'>
+        {showTabs && <div className='page-tabs'>
             <Link className='tab' to='/home'>Home</Link>
             <Link className='tab' to='/calendar'>Calendar</Link>
             <Link className='tab' to='/learn'>Learn</Link>
             <Link className='tab' to='/about-us'>About</Link>
-            {/* <Link className='tab' to='/profile'>Profile</Link> */}
-            <div className="tab">
+            <div className="tab button" ref={dropdownRef}>
                 <button className="dropdown-toggle" 
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                >Profile</button>
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+                    Profile
+                    <i className="fa fa-chevron-down" aria-hidden="true"></i>
+                </button>
                 {isDropdownOpen && (
                 <div className="dropdown-menu">
-                    {/* <Link to="/profile" className="dropdown-item">Profile</Link> */}
                     <button onClick={updateProfile} className="dropdown-item">update profile</button>
+                    <hr className='dropdown-hr'></hr>
                     <button onClick={changePassword} className="dropdown-item">change password</button>
-                    {/* <Link to="/forgot-password" className="dropdown-item">Change Password</Link> */}
+                    <hr className='dropdown-hr'></hr>
                     <button onClick={logout} className="dropdown-item">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <i className="fa fa-sign-out" aria-hidden="true"></i>
                         logout
                     </button>
                 </div>
                 )}
             </div>
-        </div>
-        {/* <a class="selected" href="/html/HOME.html">Home</a>
-        <a href="/html/calendar.html">Calendar</a>
-        <a href="/html/blog.html">Blog</a>
-        <a href="/html/aboutus.html">About</a>
-        <a href="/html/account.html">Account</a> */}
+        </div>}
     </header>
   );
 };

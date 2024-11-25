@@ -38,11 +38,12 @@
     padding: 10px 0;
     border: 1px solid #40047c;
     border-bottom: none;
+    margin-left: 2px;
 }
 
 .day {
     width: 140px;
-    height: 300px;
+    height: 230px;
     background-color: #7a60a8;
     padding: 10px 0;
     border: 1px solid #40047c;

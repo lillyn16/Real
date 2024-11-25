@@ -9,14 +9,14 @@
 form {
     padding-left: 40px;
 }
-input {
+/* input {
     margin-bottom: 16px;
-}
+} */
 .real-button {
     color: #ffffff;
     background-color: #40047c;
     padding: 8px 24px;
-    font-family: american typewriter, serif;
+    font-family:'Courier New', Courier, monospace;
     font-size: 16px;
     letter-spacing: 0.5px;
     border-radius: 4px;
