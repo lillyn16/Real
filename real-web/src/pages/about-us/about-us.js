@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './about-us.css';
 import ashleyPhoto from '../../images/Ashley_Professional_Photo.JPG';
 import rachelPhoto from '../../images/RachelPhoto.JPG';
@@ -88,17 +88,6 @@ const AboutUsPage = () => {
             </div>
         </div>
     );
-
-    function Section({ title, children }) {
-        return (
-          <div>
-            <h1 style={{ textAlign: 'left', marginLeft: '20px' }}>{title}</h1>
-            <div className="boxcenter">
-              {children}
-            </div>
-          </div>
-        );
-      }
 };
 
 export default AboutUsPage;

@@ -2,13 +2,13 @@ import React from 'react';
 import './education.css'
 // Make sure to include these imports:
 import { GoogleGenerativeAI } from "@google/generative-ai";
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+// const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+// const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-const prompt = "Tell me about Periods";
+// const prompt = "Tell me about Periods";
 
-const result = await model.generateContent(prompt);
-console.log(result.response.text());
+// const result = await model.generateContent(prompt);
+// console.log(result.response.text());
 
 
 
