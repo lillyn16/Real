@@ -13,6 +13,7 @@ import ProfilePage from './pages/profile/profile';
 import CalendarPage from './pages/calendar/calendar';
 import EducationPage from './pages/education/education';
 import WelcomePage from './pages/welcome/welcome';
+import SymptomsPage from './pages/symptoms/symptoms';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <Route path='/calendar' element={<CalendarPage />} />
             <Route path='/learn' element={<EducationPage />} />
             <Route path='/welcome' element={<WelcomePage />} />
+            <Route path='/symptoms' element={<SymptomsPage />} />
           </Routes>
         </div>
         <div className='real-footer'>

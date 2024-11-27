@@ -46,6 +46,8 @@ const WeeklyCalendarView = () => {
     const showPeriodVine = isPeriodWeek && day >= new Date(periodData?.nextPeriodStart) &&
         day <= new Date(periodData?.nextPeriodEnd);
 
+    // const showOvualtionVine = 
+
     const isHighlighted = day.toDateString() === today.toDateString();
 
       return (

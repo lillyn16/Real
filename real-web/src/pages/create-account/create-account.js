@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './create-account.css';
 import '../../stylesheet.css';
-import axios from 'axios';
+import { registerUser } from '../../services/api';
 
 const CreateAccountPage = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -12,20 +13,19 @@ const CreateAccountPage = () => {
   const [securityAnswer, setSecurityAnswer] = useState('');
 
   const createUser = async () => {
-    const userData = {
+    const userRequest = {
       username,
       password,
       securityQuestion,
       securityAnswer,
     };
 
-    console.log(userData);
-
     try {
-      const response = await axios.post('http://localhost:5154/api/Auth/register', userData);
-      console.log('User created successfully:', response.data);
+      const result = await registerUser(userRequest);
+      console.log('User created successfully:', result);
+      navigate('/welcome');
     } catch (error) {
-      console.error('Error creating user:', error.response ? error.response.data : error.message);
+      console.error('Error creating user');
     }
   };
 

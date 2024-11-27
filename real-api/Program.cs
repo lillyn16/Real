@@ -3,13 +3,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using RealApi.BLL;
+using RealApi.Data;
 using RealApi.Services;
+using RealApi.Models;
+using Microsoft.EntityFrameworkCore;
+using MySql.EntityFrameworkCore.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. Configure Services (dependency injection, authentication, CORS)
-builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<AuthService>();
 
 // Configure CORS
 builder.Services.AddCors(options =>
@@ -45,7 +49,10 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddSingleton<UserService>();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<UserService>();
 
 // Add Controllers and Swagger
 builder.Services.AddControllers();

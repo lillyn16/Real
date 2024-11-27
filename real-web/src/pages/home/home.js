@@ -9,13 +9,13 @@ const HomePage = () => {
       </div>
           <br></br>
           <br></br>
-          <div class="boxleft">
+          <div className="boxleft">
             <h1>Log Symptoms</h1>
             <p>-----------------------------------------</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
           </div>
-          <div class='box'></div>
-          <div class='boxright'>
+          <div className='box'></div>
+          <div className='boxright'>
             <h1>Tracker</h1>
             <p>-----------------------------------------</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>

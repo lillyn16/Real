@@ -49,6 +49,7 @@
 .welcome-input-content {
     display: flex;
     justify-content: center;
+    padding-bottom: 16px;
 }
 
 .welcome-input-label {
@@ -78,4 +79,9 @@
 
 .rdrMonthsVertical {
     align-items: center;
+}
+
+.submit-button-container {
+    display: flex;
+    justify-content: center;
 }
