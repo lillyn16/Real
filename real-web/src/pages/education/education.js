@@ -1,7 +1,7 @@
 import React from 'react';
 import './education.css'
 // Make sure to include these imports:
-import { GoogleGenerativeAI } from "@google/generative-ai";
+//import { GoogleGenerativeAI } from "@google/generative-ai";
 // const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 

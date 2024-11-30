@@ -13,7 +13,7 @@ const CalendarPage = () => {
               <td className="logday">
                 <p>
                   <h4>8 Days <br />Until Period</h4>
-                  <button className="log">Log Period</button>
+                  <button className="log" onClick={logPeriod(3)}>Log Period</button>
                 </p>
                 <p>
                   <h4>Symptoms</h4>
@@ -28,7 +28,7 @@ const CalendarPage = () => {
               <td className="logday">
                 <p>
                   <h4>7 Days <br />Until Period</h4>
-                  <button className="log">Log Period</button>
+                  <button className="log" onClick={logPeriod(2)}>Log Period</button>
                 </p>
                 <p>
                   <h4>Symptoms</h4>
@@ -43,7 +43,7 @@ const CalendarPage = () => {
               <td className="logday">
                 <p>
                   <h4>6 Days <br />Until Period</h4>
-                  <button className="log">Log Period</button>
+                  <button className="log" onClick={logPeriod(1)}>Log Period</button>
                 </p>
                 <p>
                   <h4>Symptoms</h4>
@@ -58,7 +58,7 @@ const CalendarPage = () => {
               <td className="logday">
                 <p>
                   <h4>5 Days <br />Until Period</h4>
-                  <button className="log">Log Period</button>
+                  <button className="log" onClick={logPeriod(0)}>Log Period</button>
                 </p>
                 <p>
                   <h4>Symptoms</h4>
@@ -93,5 +93,20 @@ const CalendarPage = () => {
     </div>
   );
 };
+
+function logPeriod(x){
+  const today = new Date();
+
+  const newPeriodStart = new Date(today)
+  newPeriodStart.setDate(today.getDate() - x); //hopefully would return the correct date 
+                                              //for the start of the period if calender shows 
+                                              //today's date in middle
+  console.log(newPeriodStart) // doesn't seem to work properly, sends automatically
+  
+  // testing code
+  //console.log("test" + newPeriodStart)
+  //console.log(x)
+  //console.log("hello world E")
+}
 
 export default CalendarPage;

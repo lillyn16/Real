@@ -25,7 +25,8 @@ form {
 .button-container{
     display: inline-flex;
     justify-content: space-between;
-    min-width: 80%;
+    min-width: 350px;
+    justify-self: center;
 }
 .return{
     color: white !important;
