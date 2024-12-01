@@ -18,7 +18,7 @@ const EducationPage = () => {
       <h1>
         Here are some helpful links to learn about your cycle.
       </h1>
-      <div class = "fourboxes">
+      <div class = "Rows">
                     <div class="boxleft">
                       <h1>Just Started Information</h1>
 
@@ -42,6 +42,8 @@ const EducationPage = () => {
                           <li><a className='sources' href='https://my.clevelandclinic.org/health/diseases/11901-hpv-human-papilloma-virus'>HPV (Human Papillomavirus)</a></li>
                         </ul>
                     </div>
+                    </div>
+                    <div class="Rows">
                     <div class="boxleft">
                         <h1>Adult Information</h1>
 

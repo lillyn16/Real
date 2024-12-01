@@ -300,3 +300,9 @@
         color: #e0aecb;
         margin: 10px;
     }
+
+    @media only screen and (max-width: 1024px) {
+        .Rows {
+            flex-direction: column
+        }
+      }
