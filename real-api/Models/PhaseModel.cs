@@ -1,6 +1,9 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace RealApi.Models 
 {
     public class Phase {
+        [Key]
         public int RecordId { get; set; }
         public int UserId { get; set; }
         public DateTime LastPeriodStart { get; set; }
