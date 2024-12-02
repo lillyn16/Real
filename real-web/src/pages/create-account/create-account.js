@@ -32,69 +32,79 @@ const CreateAccountPage = () => {
   return (
     <div className="create-account-container">
       <div className="create-account-header">Create Account</div>
-      <form>
-        <label htmlFor="username">Username</label><br />
-        <input
-          className="textbox"
-          id="username"
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        /><br />
+      <form className='create-form-container'>
+        <div className='create-input-container'>
+          <label>username</label>
+          <input
+            className="real-input"
+            id="username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
 
-        <label htmlFor="password">Password</label><br />
-        <input
-          className="textbox"
-          id="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        /><br />
+        <div className='create-input-container'>
+          <label htmlFor="password">password</label>
+          <input
+            className="real-input"
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
-        <label htmlFor="passwordConfirm">Confirm Password</label><br />
-        <input
-          className="textbox"
-          id="passwordConfirm"
-          type="password"
-          value={passwordConfirm}
-          onChange={(e) => setPasswordConfirm(e.target.value)}
-        /><br />
+        <div className='create-input-container'>
+          <label htmlFor="passwordConfirm">confirm password</label>
+          <input
+            className="real-input"
+            id="passwordConfirm"
+            type="password"
+            value={passwordConfirm}
+            onChange={(e) => setPasswordConfirm(e.target.value)}
+          />
+        </div>
 
-        <label htmlFor="securityQuestion">Security Question</label><br />
-        <select
-          className="textbox"
-          id="securityQuestion"
-          value={securityQuestion}
-          onChange={(e) => setSecurityQuestion(e.target.value)}
-        >
-          <option value="" disabled>
-            -- Select a question --
-          </option>
-          <option value="Q1">What is your favorite color?</option>
-          <option value="Q2">What is your mother's maiden name?</option>
-          <option value="Q3">What was your first pet's name?</option>
-          <option value="Q4">What street did you grow up on?</option>
-        </select><br />
+        <div className='create-input-container'>
+          <label htmlFor="securityQuestion">security question</label>
+          <select
+            className="real-input"
+            id="securityQuestion"
+            value={securityQuestion}
+            onChange={(e) => setSecurityQuestion(e.target.value)}
+          >
+            <option value="" disabled>
+              -- Select a question --
+            </option>
+            <option value="Q1">What is your favorite color?</option>
+            <option value="Q2">What is your mother's maiden name?</option>
+            <option value="Q3">What was your first pet's name?</option>
+            <option value="Q4">What street did you grow up on?</option>
+          </select>
+        </div>
 
-        <label htmlFor="securityAnswer">Security Answer</label><br />
-        <input
-          className="textbox"
-          id="securityAnswer"
-          type="text"
-          value={securityAnswer}
-          onChange={(e) => setSecurityAnswer(e.target.value)}
-        /><br />
+        <div className='create-input-container'>
+          <label htmlFor="securityAnswer">security answer</label>
+          <input
+            className="real-input"
+            id="securityAnswer"
+            type="text"
+            value={securityAnswer}
+            onChange={(e) => setSecurityAnswer(e.target.value)}
+          />
+        </div>
 
         <div className="button-container">
           <div className="return">
-            <Link to="/login" className="return">Back to Login</Link>
+            <Link to="/login" className="return">back to login</Link>
           </div>
           <button
             className="real-button"
             type="button"
             onClick={createUser}
           >
-            Create
+            create
           </button>
         </div>
       </form>

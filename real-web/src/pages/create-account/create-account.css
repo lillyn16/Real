@@ -1,17 +1,18 @@
 .create-account-container {
     overflow: hidden;
     padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
 }
 .create-account-header {
-    padding: 40px;
-    font-size: 40px;
+    width: 350px;
+    display: flex;
+    margin: 24px 0 36px;
+    font-size: 32px;
+    font-weight: 700;
 }
-form {
-    padding-left: 40px;
-}
-/* input {
-    margin-bottom: 16px;
-} */
 .real-button {
     color: #ffffff;
     background-color: #40047c;
@@ -25,9 +26,18 @@ form {
 .button-container{
     display: inline-flex;
     justify-content: space-between;
+    align-items: end;
     min-width: 80%;
 }
 .return{
     color: white !important;
-    
+    text-underline-offset: 4px;
+    font-weight: 600;
+}
+.create-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 16px;
+    font-weight: 600;
 }
