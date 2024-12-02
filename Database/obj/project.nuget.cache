@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0ACQ9m9STKA=",
+  "success": true,
+  "projectFilePath": "c:\\Users\\lilim\\Downloads\\Real\\Database\\Real.sqlproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lilim\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\lilim\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net46\\1.0.0\\microsoft.netframework.referenceassemblies.net46.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

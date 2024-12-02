@@ -1,0 +1,12 @@
+c:\Users\lilim\Downloads\Real\Database\bin\Debug\Real.dacpac
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\Real.sqlproj.AssemblyReference.cache
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\Real.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\Real.sourcelink.json
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\Model.xml
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\refactor.xml
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\postdeploy.sql
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\predeploy.sql
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\Real.dll
+c:\Users\lilim\Downloads\Real\Database\obj\Debug\Real.pdb
+c:\Users\lilim\Downloads\Real\Database\bin\Debug\Real.dll
+c:\Users\lilim\Downloads\Real\Database\bin\Debug\Real.pdb
