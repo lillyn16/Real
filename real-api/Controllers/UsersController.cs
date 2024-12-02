@@ -1,97 +1,59 @@
-// using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using RealApi.Models;
+using RealApi.Services;
 
-// namespace RealApi.Controllers 
-// {
-//     [ApiController]
-//     [Route("[controller]")]
-//     public class UsersController : ControllerBase
-//     {
-//         private readonly ILogger<UsersController> _logger;
-//         private List<User> users;
-//         public UsersController(ILogger<UsersController> logger)
-//         {
-//             _logger = logger;
-//             users = PopulateUsers();
-//         }
+namespace RealApi.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UsersController : ControllerBase
+    {
+        private readonly UserService _userService;
 
-//         [HttpGet(Name = "GetUsers")]
-//         public IEnumerable<User> Get()
-//         {
-//             return users;
-//         }
+        public UsersController(UserService userService)
+        {
+            _userService = userService;
+        }
 
-//         // [HttpGet("{id}")]
-//         // public ActionResult<User> GetUser(int id)
-//         // {
-//         //     var user = users.Find(id);
-//         //     if (user == null) return NotFound();
-//         //     return user;
-//         // }
+        // POST: api/users
+        [HttpPost]
+        public async Task<IActionResult> AddUser([FromBody] RegisterDto dto)
+        {
+            if (dto == null)
+            {
+                return BadRequest("User data is null.");
+            }
 
-//         // [HttpPost]
-//         // public ActionResult<User> Create(User user)
-//         // {
-//         //     _context.Users.Add(user);
-//         //     _context.SaveChanges();
-//         //     return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
-//         // }
+            try
+            {
+                // Call the UserService to create a new user
+                var user = await _userService.CreateUser(
+                    dto.Username, dto.Password, 
+                    dto.SecurityQuestion, dto.SecurityAnswer);
 
-//         // [HttpPut("{id}")]
-//         // public ActionResult Update(int id, User user)
-//         // {
-//         //     if (id != user.Id) return BadRequest();
-//         //     _context.Entry(user).State = EntityState.Modified;
-//         //     _context.SaveChanges();
-//         //     return NoContent();
-//         // }
+                // Return a 201 Created response with the user's Id and Username
+                return CreatedAtAction(nameof(GetUsers), new { id = user.UserID }, user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
 
-//         // [HttpDelete("{id}")]
-//         // public ActionResult Delete(int id)
-//         // {
-//         //     var user = _context.Users.Find(id);
-//         //     if (user == null) return NotFound();
-//         //     _context.Users.Remove(user);
-//         //     _context.SaveChanges();
-//         //     return NoContent();
-//         // }
-
-//         List<User> PopulateUsers()
-//         {
-//             return new List<User>
-//             {
-//                 new User
-//                 {
-//                     Id = 1,
-//                     Username = "Rachel",
-//                     Password = "Password1",
-//                     SecturityQuestion = "What is your role?",
-//                     SecurityAnswer = "Full Stack"
-//                 },
-//                  new User
-//                 {
-//                     Id = 2,
-//                     Username = "Rachel2",
-//                     Password = "Password1",
-//                     SecturityQuestion = "What is your role?",
-//                     SecurityAnswer = "Full Stack"
-//                 },
-//                   new User
-//                 {
-//                     Id = 3,
-//                     Username = "Rachel3",
-//                     Password = "Password1",
-//                     SecturityQuestion = "What is your role?",
-//                     SecurityAnswer = "Full Stack"
-//                 },
-//                 new User
-//                 {
-//                     Id = 4,
-//                     Username = "Rachel4",
-//                     Password = "Password1",
-//                     SecturityQuestion = "What is your role?",
-//                     SecurityAnswer = "Full Stack"
-//                 },
-//             };
-//         }
-//     }
-// }
+        // GET: api/users
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
+        {
+            try
+            {
+                // Get all users from the UserService
+                var users = await _userService.GetUsersAsync();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+    }
+}

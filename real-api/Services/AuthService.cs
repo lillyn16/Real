@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RealApi.Services
 {
-    public class UserService
+    public class AuthService
     {
         private readonly AppDbContext _context;
 
-        public UserService(AppDbContext context)
+        public AuthService(AppDbContext context)
         {
             _context = context;
         }
@@ -41,11 +41,6 @@ namespace RealApi.Services
             await _context.SaveChangesAsync();
 
             return user;
-        }
-
-        public async Task<List<User>> GetUsersAsync()
-        {
-            return await _context.Users.ToListAsync();
         }
 
         public async Task<User> Authenticate(string username, string password)

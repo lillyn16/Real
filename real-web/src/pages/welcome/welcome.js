@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './welcome.css'
+import './welcome.css';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRange } from "react-date-range";
@@ -7,7 +7,7 @@ import { enGB } from 'date-fns/locale';
 import { useNavigate } from "react-router-dom";
 
 const WelcomePage = () => {
-    const [state, setState] = useState([
+    const [lastPeriodState, setLastPeriodState] = useState([
         {
           startDate: new Date(),
           endDate: new Date(),
@@ -23,6 +23,10 @@ const WelcomePage = () => {
     const navigate = useNavigate();
     const skip = () => {
         navigate('/home');
+    }
+
+    const submit = () => {
+        console.log(lastPeriodState)
     }
 
     return (
@@ -49,15 +53,22 @@ const WelcomePage = () => {
                         <div className="welcome-input-label">Select the date range of your last period</div>
                         <DateRange
                             editableDateInputs={true}
-                            onChange={item => setState([item.selection])}
+                            onChange={item => setLastPeriodState([item.selection])}
                             moveRangeOnFirstSelection={false}
-                            ranges={state}
+                            ranges={lastPeriodState}
                             locale={enGB}
                             maxDate={maxDate}
                             minDate={minDate}
                             rangeColors={['#7374b5']}
                         />
                     </div>
+                </div>
+                {/* <div className="welcome-input-container">
+                    <div className="welcome-input-label">What is the average length of your period?</div>
+                    <input className="welcome-input" type="text"></input>
+                </div> */}
+                <div className="submit-button-container">
+                    <button className="real-button" type="button" onClick={submit}>submit</button>
                 </div>
             </div>
         </div>

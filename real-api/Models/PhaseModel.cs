@@ -1,9 +1,11 @@
 namespace RealApi.Models 
 {
     public class Phase {
+        public int RecordId { get; set; }
         public int UserId { get; set; }
         public DateTime LastPeriodStart { get; set; }
-        public int CycleLength { get; set; } // Typically 28 days
-        public int PeriodLength { get; set; } // Typically 5-7 days
+        public DateTime LastPeriodEnd { get; set; }
+        public int CycleLength { get; set; } // Average cycle length
+        public int PeriodLength { get; set; } // Average period length
     }
 }

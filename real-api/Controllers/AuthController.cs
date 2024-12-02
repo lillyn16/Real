@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using RealApi.BLL;
 using RealApi.Models;
-using RealApi.Services; 
+using RealApi.Services;
 
 namespace RealApi.Controllers
 {
@@ -9,22 +8,23 @@ namespace RealApi.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly AuthService _authService;
 
-        public AuthController(UserService userService)
+        public AuthController(AuthService authService)
         {
-            _userService = userService;
+            _authService = authService;
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterDto dto)
+        public async Task<IActionResult> Register([FromBody] RegisterDto dto)
         {
             try
             {
-                var user = _userService.CreateUser(
+                var user = await _authService.CreateUser(
                     dto.Username, dto.Password, 
                     dto.SecurityQuestion, dto.SecurityAnswer);
-                return Ok(new { user.Id, user.Username });
+
+                return Ok(new { user.UserID, user.Username });
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace RealApi.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginDto dto)
         {
-            var user = _userService.Authenticate(dto.Username, dto.Password);
+            var user = _authService.Authenticate(dto.Username, dto.Password);
             if (user == null)
                 return Unauthorized("Invalid username or password");
 

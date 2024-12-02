@@ -41,12 +41,12 @@
 .real-input:hover {
     cursor: pointer !important;
 }
-.submit-button-container {
+.login-button-container {
     display: flex;
     justify-content: space-between;
     padding-top: 8px;  
 }
-.submit-button-container a {
+.login-button-container a {
     text-decoration: none;
 }
 button {

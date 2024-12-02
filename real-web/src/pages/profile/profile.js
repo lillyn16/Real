@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './profile.css'
 
 const ProfilePage = () => {
-    const navigate = useNavigate();
     const [username, setUsername] = useState('exampleUsername');
     const [securityQuestion, setSecurityQuestion] = useState('');
     const [securityAnswer, setSecurityAnswer] = useState('');

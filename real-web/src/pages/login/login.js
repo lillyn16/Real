@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './login.css'
 import flourishPurpleImg from '../../images/flourish-purple.png'
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
-
+import { login } from '../../services/api';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -11,31 +10,17 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [errorMessage, setMessage] = useState('');
 
-  const login = async (e) => {
-    navigate('/welcome');
+  const loginSubmit = async (e) => {
+    e.preventDefault();
+    const loginRequest = { username, password };
 
-    // e.preventDefault();
-
-    // try {
-    //   const response = await axios.post('http://localhost:5154/api/auth/login', {
-    //     username,
-    //     password,
-    //   });
-
-    //   // Assuming your backend returns a success message or user data
-    //   setMessage('Login successful!');
-    //   navigate('/home');
-
-    // } catch (error) {
-    //   // Improved error handling with Axios
-    //   if (error.response) {
-    //     // Server responded with a status other than 200 range
-    //     setMessage(`Login failed: ${error.response.data}`);
-    //   } else {
-    //     // Network error or request setup error
-    //     setMessage(`Error: ${error.message}`);
-    //   }
-    // }
+    try {
+      const result = await login(loginRequest);
+      console.log('Login successful:', result);
+      navigate('/home');
+    } catch (err) {
+      setMessage('Failed to log in');
+    }
   };
 
   const createAccount = () => {
@@ -58,9 +43,9 @@ const LoginPage = () => {
                 <label>password</label>
                 <input className='real-input' type='text' value={password} onChange={(e) => setPassword(e.target.value)}></input>
               </div>
-              <div className='submit-button-container'>
+              <div className='login-button-container'>
                 <Link to="/forgot-password">forgot password?</Link>
-                <button className='real-button' type='button' onClick={login}>log in</button>
+                <button className='real-button' type='button' onClick={loginSubmit}>log in</button>
               </div>
               {errorMessage && <div className='error-message'>{errorMessage}</div>}
               <hr className='break' />

@@ -1,7 +1,7 @@
 namespace RealApi.Models 
 {
     public class User {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public int UserID { get; set; }
         public string Username { get; set; }
         public string PasswordHash { get; set; }
         public string SecurityQuestion { get; set; } 
