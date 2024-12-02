@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[Symptoms]
+(
+  cramps NVARCHAR NOT NULL,
+  bloating NVARCHAR NOT NULL,
+  acne NVARCHAR NOT NULL,
+  tired NVARCHAR NOT NULL,
+  mood NVARCHAR NOT NULL,
+  flow NVARCHAR NOT NULL,
+  notes NVARCHAR NOT NULL
+)
