@@ -5,6 +5,7 @@ import 'react-date-range/dist/theme/default.css';
 import { DateRange } from "react-date-range";
 import { enGB } from 'date-fns/locale';
 import { useNavigate } from "react-router-dom";
+import { sendPhaseData } from "../../services/api";
 
 const WelcomePage = () => {
     const [lastPeriodState, setLastPeriodState] = useState([
@@ -21,12 +22,30 @@ const WelcomePage = () => {
     minDate.setFullYear(minDate.getFullYear() - 5);
 
     const navigate = useNavigate();
+
     const skip = () => {
         navigate('/home');
     }
 
-    const submit = () => {
-        console.log(lastPeriodState)
+    const submit = async () => {
+        const { startDate, endDate } = lastPeriodState[0];
+        const periodLength = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)); // Calculate period length
+
+        const phaseData = {
+            UserId: 5, // Replace with actual user ID
+            LastPeriodStart: startDate.toISOString(),
+            LastPeriodEnd: endDate.toISOString(),
+            CycleLength: 28, // Initial value for all users
+            PeriodLength: periodLength
+        };
+
+        try {
+            const response = await sendPhaseData(phaseData);
+            console.log('Phase data submitted successfully:', response);
+            navigate('/home');
+        } catch (error) {
+            console.error('Failed to submit phase data:', error);
+        }
     }
 
     return (

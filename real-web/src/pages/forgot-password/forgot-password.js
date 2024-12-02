@@ -1,47 +1,42 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import vinesImg from '../../images/vines.png'
+import './forgot-password.css'
 
 const ForgotPasswordPage = () => {
+    const submit = async () => {
+        
+    }
+
     return (
         <div className="forgot-password-container">
              <h1>Reset Password</h1>
-            {
-            /* <form>
-                <label for="Username">Username:</label><br />
-                <input class="textbox" type="text" id="Username" name="Username" /><br />
-                <label for="SecurityQ">Security Question:</label><br />
-                <input class="textbox" type="text" id="SecurityQ" name="SecurityQ" readonly="readonly" value="Q1" /><br />
-                <label for="Answer">Answer:</label><br />
-                <input class="textbox" type="text" id="Answer" name="Answer" /><br />
-                <label for="NewPass">New Password:</label><br />
-                <input class="textbox" type="text" id="NewPass" name="NewPass" /><br />
-                <label for="ConPass">Confirm New Password:</label><br />
-                <input class="textbox" type="text" id="ConPass" name="ConPass" /><br />
-                <div class="decision">
-                    <div><a href="/html/login.html" class="return">Back to Login</a></div>
-                    <input class="buttons" type="submit" value="Login" />
+            <form className='forgot-password-form-container'>
+                <div className='forgot-password-input-container'>
+                    <label>username</label>
+                    <input className='real-input' type="text" id="username"></input>
                 </div>
-            </form> */
-
-            <form>
-                <label for="Username">Username:</label>
-                <input className='textbox' type="text" id="Username" name="Username"></input>
-                <label for="SecurityQ">Security Question:</label>
-                <input className='textbox' type="text" id="SecurityQ" name="SecurityQ" readOnly="readonly" value={"What is your favorite color?"}></input>
-                <label for="Answer">Answer:</label>
-                <input className="textbox" type="text" id="Answer" name="Answer"></input>
-                <label for="NewPass">New Password:</label><br />
-                <input class="textbox" type="text" id="NewPass" name="NewPass"></input>
-                <label for="ConPass">Confirm New Password:</label><br />
-                <input className="textbox" type="text" id="ConPass" name="ConPass"></input>
-                <div className="decision">
-                    <div><a href="/login" class="return">Back to Login</a></div>
-                    <input className="real-button" type="submit" value="Login" ></input>
+                <div className='forgot-password-input-container'>
+                    <label>security question</label>
+                    <input className='real-input' type="text" id="SecurityQ" name="SecurityQ" readOnly="readonly" value={"What is your favorite color?"}></input>    
+                </div>
+                <div className='forgot-password-input-container'>
+                    <label>answer</label>
+                    <input className="real-input" type="text" id="Answer" name="Answer"></input>    
+                </div>
+                <div className='forgot-password-input-container'>
+                    <label>new password</label>
+                    <input class="real-input" type="text" id="NewPass" name="NewPass"></input>    
+                </div>
+                <div className='forgot-password-input-container'>
+                    <label>confirm new password</label>
+                    <input className="real-input" type="text" id="ConPass" name="ConPass"></input>
+                </div>
+                <div className="forgot-password-button-container">
+                    <div><a href="/login" class="return">back to login</a></div>
+                    <button className="real-button" type="button" onClick={submit}>submit</button> 
                 </div>
             </form>
-            }
-            {/* <img class="vines" src={vinesImg} alt="vines" /> */}
         </div>
   );
 };

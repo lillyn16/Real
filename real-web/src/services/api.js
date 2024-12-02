@@ -22,6 +22,16 @@ export async function login(loginRequest) {
     }
 }
 
+export async function sendPhaseData(phaseData) {
+    try {
+        const response = await axios.post(`${REAL_API}/phase/add`, phaseData);
+        return response.data;
+    } catch (error) {
+        console.error('Error sending phase data:', error);
+        throw error;
+    }
+}
+
 export async function  getPhase(userId) {
     try {
         const response = await axios.get(`${REAL_API}/phase/${userId}`);

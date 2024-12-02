@@ -1,6 +1,6 @@
 /* This is stylesheet.css an external style sheet */
   	/* Style whole page */
-      header{
+      /* header{
         background-color: #3853a4;
         height: 20%;
         width: 100%;
@@ -15,7 +15,7 @@
         color: white;
         text-decoration: none;
         padding: 20px;
-    }
+    } */
     body {
         background: linear-gradient(to bottom, #e0aecb, #7a60a8 70%);
         background-repeat: no-repeat;

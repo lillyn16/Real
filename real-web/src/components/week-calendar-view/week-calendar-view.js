@@ -15,13 +15,13 @@ const WeeklyCalendarView = () => {
   useEffect(() => {
     const getPhaseData = async () => {
       try {
-        const phaseData = await getPhase(1);  // replace with user id
+        const phaseData = await getPhase(6);  // replace with user id
         setPeriodData({
           nextPeriodStart: phaseData.nextPeriodStart,
           nextPeriodEnd: phaseData.nextPeriodEnd
         });
         setIsPeriodWeek(phaseData.isCurrentWeekPeriod); 
-        console.log(phaseData);
+        // console.log(phaseData);
       } catch (error) {
         console.error('Error fetching period data:', error);
       }
@@ -71,7 +71,6 @@ const WeeklyCalendarView = () => {
 
   return (
     <div className="weekly-view-container">
-      <h2>Weekly Menstrual Tracker</h2>
       <div className='month-container'>{monthName}</div>
       <div className='days-container'>{renderDays()}</div>
     </div>

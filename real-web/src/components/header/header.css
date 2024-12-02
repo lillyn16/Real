@@ -7,6 +7,7 @@ header {
 .logo-container {
     display: flex;
     padding-left: 24px;
+    align-items: center;
 }
 .logo {
     width: 50px;
@@ -14,7 +15,7 @@ header {
 .website-name {
     display: flex;
     height: 100%;
-    align-self: center;
+    align-items: center;
     font-size: 32px;
     font-weight: bold;
     padding-left: 4px;
@@ -27,15 +28,15 @@ header {
     font-size: 18px;
 }
 .tab {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
     position: relative;
     display: flex;
     align-items: center;
     height: 40px;
     z-index: 99;
     pointer-events: auto;
-}
-.tab.button {
-    height: 80px;
 }
 .tab:focus {
     font-weight: 700;
@@ -54,7 +55,6 @@ header {
     font-size: 18px;
     font-weight: 300;
     height: 100%;
-    padding: 0 20px;
 }
 .dropdown-toggle:hover {
     cursor: pointer;
