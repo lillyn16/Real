@@ -9,3 +9,12 @@ ul{
     color: #40047c;
     font-weight: bold;
 }
+.Rows{
+    justify-content: space-evenly;
+}
+.boxleft{
+    margin: 10px;
+}
+.boxright{
+    margin: 10px;
+}

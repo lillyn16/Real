@@ -32,6 +32,8 @@
     }
     label{
         text-align: left;
+        justify-self: center;
+        width: 350px;
     }
     /* Wrapper div controls width of entire layout */
     #wrapper{
@@ -60,14 +62,16 @@
     } */
     
     .textbox{
-        min-width: 80%;
+        width: 350px;
         margin: 10px 0;
+        justify-self: center;
     }
     
     .decision{
         display: inline-flex;
         justify-content: space-between;
-        min-width: 80%;
+        width: 350px;
+        justify-self: center;
     }
     
     .buttons{
@@ -296,3 +300,9 @@
         color: #e0aecb;
         margin: 10px;
     }
+
+    @media only screen and (max-width: 1024px) {
+        .Rows {
+            flex-direction: column
+        }
+      }
