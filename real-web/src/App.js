@@ -1,7 +1,7 @@
-// import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate, Navigate, useLocation } from 'react-router-dom';
 import LoginPage from './pages/login/login';
 import CreateAccountPage from './pages/create-account/create-account';
 import ForgotPasswordPage from './pages/forgot-password/forgot-password';
@@ -14,11 +14,31 @@ import CalendarPage from './pages/calendar/calendar';
 import EducationPage from './pages/education/education';
 import WelcomePage from './pages/welcome/welcome';
 import SymptomsPage from './pages/symptoms/symptoms';
+import { checkSession } from './services/api';
 
 
 function App() {
   const location = useLocation();
   const showHeaderAndFooter = location.pathname !== '/login';
+  const skipSessionCheck = location.pathname === '/login' || location.pathname === '/create-account' || location.pathname === '/welcome'
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //     const verifySession = async () => {
+  //         try {
+  //           if (skipSessionCheck) {
+  //               return;
+  //           }
+  //             await checkSession();
+  //             console.log('Session is valid');
+  //         } catch (error) {
+  //             console.error('Session expired:', error);
+  //             navigate('/login'); // back to login if session is expired
+  //         }
+  //     };
+
+  //     verifySession();
+  // }, [navigate]);
 
   return (
       <div className='real-app-container'>

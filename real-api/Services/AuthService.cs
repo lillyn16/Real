@@ -43,7 +43,7 @@ namespace RealApi.Services
             return user;
         }
 
-        public async Task<User> Authenticate(string username, string password)
+        public async Task<User?> Authenticate(string username, string password)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
             if (user == null)

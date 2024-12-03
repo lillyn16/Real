@@ -39,11 +39,11 @@ namespace RealApi.Controllers
             _context.Phases.Add(newPhase);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetPeriodWeek), new { userId = newPhase.UserId }, newPhase);
+            return CreatedAtAction(nameof(GetPhaseInfo), new { userId = newPhase.UserId }, newPhase);
         }
 
         [HttpGet("{userId}")]
-        public IActionResult GetPeriodWeek(int userId)
+        public IActionResult GetPhaseInfo(int userId)
         {
             var phase = _context.Phases.FirstOrDefault(p => p.UserId == userId);
             if (phase == null)

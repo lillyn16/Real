@@ -16,13 +16,15 @@ namespace RealApi.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto dto)
+        public async Task<IActionResult> Register([FromBody] RegisterModel registerModel)
         {
             try
             {
                 var user = await _authService.CreateUser(
-                    dto.Username, dto.Password, 
-                    dto.SecurityQuestion, dto.SecurityAnswer);
+                    registerModel.Username, registerModel.Password, 
+                    registerModel.SecurityQuestion, registerModel.SecurityAnswer);
+
+                HttpContext.Session.SetInt32("userId", user.UserID);
 
                 return Ok(new { user.UserID, user.Username });
             }
@@ -33,27 +35,45 @@ namespace RealApi.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginDto dto)
+        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
-            var user = _authService.Authenticate(dto.Username, dto.Password);
-            if (user == null)
-                return Unauthorized("Invalid username or password");
+            try
+            {
+                var user = await _authService.Authenticate(loginModel.Username, loginModel.Password);
 
-            return Ok("Login successful");
+                if (user == null)
+                {
+                    return Unauthorized("Invalid username or password");
+                }
+
+                HttpContext.Session.SetInt32("userId", user.UserID);
+
+                return Ok("Login successful");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
-    }
 
-    public class RegisterDto
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string SecurityQuestion { get; set; }
-        public string SecurityAnswer { get; set; }
-    }
+        [HttpGet("check-session")]
+        public IActionResult CheckSession()
+        {
+            var userId = HttpContext.Session.GetInt32("userId");
 
-    public class LoginDto
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
+            if (userId == null)
+            {
+                return Unauthorized(new { message = "Session expired" });
+            }
+
+            return Ok(new { userId });
+        }
+
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return Ok(new { message = "Logout successful" });
+        }
     }
 }

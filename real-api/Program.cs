@@ -18,6 +18,14 @@ builder.Services.AddScoped<AuthService>();
 // Configure CORS
 builder.Services.AddCors(options =>
 {
+    // options.AddPolicy("AllowFrontend",
+    //     policy =>
+    //     {
+    //         policy.WithOrigins("http://localhost:3000") // Frontend origin
+    //               .AllowCredentials()
+    //               .AllowAnyHeader()
+    //               .AllowAnyMethod();
+    //     });
     options.AddPolicy("AllowAll", policy =>
     {
         policy.AllowAnyOrigin()
@@ -26,29 +34,16 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Configure JWT Authentication
-var key = builder.Configuration["Jwt:Key"];
-builder.Services.AddAuthentication(options =>
+// Add session services
+builder.Services.AddDistributedMemoryCache(); // Required for sessions
+builder.Services.AddSession(options =>
 {
-    options.DefaultAuthenticateScheme = "JwtBearer";
-    options.DefaultChallengeScheme = "JwtBearer";
-})
-.AddJwtBearer("JwtBearer", options =>
-{
-    options.RequireHttpsMetadata = false; // Use true in production
-    options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
-    };
+    options.IdleTimeout = TimeSpan.FromMinutes(120); // Session timeout duration
+    options.Cookie.HttpOnly = true; // Prevent client-side scripts from accessing the cookie
+    options.Cookie.IsEssential = true; // Required for GDPR compliance
 });
 
+// Add DbContext services
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -71,6 +66,9 @@ if (app.Environment.IsDevelopment())
 
 // CORS should be placed before UseAuthentication and UseAuthorization
 app.UseCors("AllowAll"); // Use the configured CORS middleware
+
+// Use sessions in the app pipeline
+app.UseSession();
 
 app.UseHttpsRedirection();
 app.UseAuthentication(); // Authentication middleware

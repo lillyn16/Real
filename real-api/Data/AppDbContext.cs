@@ -7,7 +7,6 @@ namespace RealApi.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        // Define DbSet for User model
         public DbSet<User> Users { get; set; }
         public DbSet<Phase> Phases { get; set; }
     }

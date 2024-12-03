@@ -22,6 +22,30 @@ export async function login(loginRequest) {
     }
 }
 
+export async function logout() {
+    try {
+        const response = await axios.post(`${REAL_API}/Auth/logout`, {}, {
+            withCredentials: true, // Include cookies for session management
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error during logout:', error);
+        throw error;
+    }
+}
+
+export async function checkSession() {
+    try {
+        const response = await axios.get(`${REAL_API}/Auth/check-session`, {
+            withCredentials: true, // Include cookies for session management
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error checking session:', error);
+        throw error;
+    }
+}
+
 export async function sendPhaseData(phaseData) {
     try {
         const response = await axios.post(`${REAL_API}/phase/add`, phaseData);

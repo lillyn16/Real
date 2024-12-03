@@ -18,8 +18,8 @@ const EducationPage = () => {
       <h1>
         Here are some helpful links to learn about your cycle.
       </h1>
-      <div class = "Rows">
-                    <div class="boxleft">
+      <div className="Rows">
+                    <div className="boxleft">
                       <h1>Just Started Information</h1>
 
                       <ul>
@@ -32,7 +32,7 @@ const EducationPage = () => {
                       </ul>
 
                     </div>
-                     <div class="boxright">
+                     <div className="boxright">
                         <h1>Period Information</h1>
 
                         <ul>
@@ -43,8 +43,8 @@ const EducationPage = () => {
                         </ul>
                     </div>
                     </div>
-                    <div class="Rows">
-                    <div class="boxleft">
+                    <div className="Rows">
+                    <div className="boxleft">
                         <h1>Adult Information</h1>
 
                         <ul>
@@ -53,7 +53,7 @@ const EducationPage = () => {
                           <li><a className='sources' href='https://www.nia.nih.gov/health/menopause/what-menopause'>What Is Menopause?</a></li>
                         </ul>
                     </div>
-                    <div class="boxright">
+                    <div className="boxright">
                         <h1>Teenager Information</h1>
 
                         <ul>

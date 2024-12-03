@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './header.css';
 import logoLight from '../../images/logoLight.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { logout } from '../../services/api';
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -28,9 +29,14 @@ const Header = () => {
         navigate('/forgot-password');
     };
 
-    const logout = () => {
-        setIsDropdownOpen(false); 
-        navigate('/login');
+    const logoutClicked = async () => {
+        try {
+            await logout();
+            setIsDropdownOpen(false); 
+            navigate('/login');
+        } catch (error) {
+            console.log('Error during logout:', error);
+        }
     };
 
   return (
@@ -56,7 +62,7 @@ const Header = () => {
                     <hr className='dropdown-hr'></hr>
                     <button onClick={changePassword} className="dropdown-item">change password</button>
                     <hr className='dropdown-hr'></hr>
-                    <button onClick={logout} className="dropdown-item">
+                    <button onClick={logoutClicked} className="dropdown-item">
                         <i className="fa fa-sign-out" aria-hidden="true"></i>
                         logout
                     </button>

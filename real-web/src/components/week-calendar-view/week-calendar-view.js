@@ -15,7 +15,7 @@ const WeeklyCalendarView = () => {
   useEffect(() => {
     const getPhaseData = async () => {
       try {
-        const phaseData = await getPhase(6);  // replace with user id
+        const phaseData = await getPhase(5);  // replace with user id
         setPeriodData({
           nextPeriodStart: phaseData.nextPeriodStart,
           nextPeriodEnd: phaseData.nextPeriodEnd
