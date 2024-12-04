@@ -16,10 +16,11 @@ const LoginPage = () => {
 
     try {
       const result = await login(loginRequest);
-      console.log('Login successful:', result);
+      const userId = result;
+      localStorage.setItem('userId', userId);
       navigate('/home');
     } catch (err) {
-      setMessage('Failed to log in');
+      setMessage('Invalid username or password');
     }
   };
 
@@ -41,7 +42,7 @@ const LoginPage = () => {
               </div>
               <div className='login-input-container'>
                 <label>password</label>
-                <input className='real-input' type='text' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <input className='real-input' type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
               </div>
               <div className='login-button-container'>
                 <Link to="/forgot-password">forgot password?</Link>

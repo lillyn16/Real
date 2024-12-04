@@ -27,7 +27,6 @@ namespace RealApi.Services
             var passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
             var securityAnswerHash = BCrypt.Net.BCrypt.HashPassword(securityAnswer);
 
-            // Create new user object
             var user = new User
             {
                 Username = username,
@@ -36,7 +35,6 @@ namespace RealApi.Services
                 SecurityAnswerHash = securityAnswerHash
             };
 
-            // Save the user to the database
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
@@ -49,13 +47,13 @@ namespace RealApi.Services
             if (user == null)
                 return null;
 
-            // Verify the password using BCrypt
+            // verify password using BCrypt
             if (!BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
             {
                 return null; // Invalid password
             }
 
-            return user; // Successful authentication
+            return user; // Success
         }
     }
 }

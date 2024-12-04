@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './week-calendar-view.css';
 import periodVine from '../../images/periodVine.png'
-import { getPhase } from '../../services/api';
+import { getPhase, logPeriodDay } from '../../services/api';
 
 
 const WeeklyCalendarView = () => {
@@ -12,16 +12,17 @@ const WeeklyCalendarView = () => {
   const monthNumber = new Date().getMonth();
   let monthName = months[monthNumber];
 
+  const userId = localStorage.getItem('userId');
+
   useEffect(() => {
     const getPhaseData = async () => {
       try {
-        const phaseData = await getPhase(5);  // replace with user id
+        const phaseData = await getPhase(userId);
         setPeriodData({
           nextPeriodStart: phaseData.nextPeriodStart,
           nextPeriodEnd: phaseData.nextPeriodEnd
         });
         setIsPeriodWeek(phaseData.isCurrentWeekPeriod); 
-        // console.log(phaseData);
       } catch (error) {
         console.error('Error fetching period data:', error);
       }
@@ -29,6 +30,20 @@ const WeeklyCalendarView = () => {
 
     getPhaseData();
   }, []);
+
+  // const logPeriod = async () => {
+  //   const periodLogRequest = {
+  //     userId,
+  //     date
+  //   }
+
+  //   try {
+  //     const result = await logPeriodDay(periodLogRequest)
+  //     console.log(result);
+  //   } catch (error) {
+  //     console.error('Error creating user');
+  //   }
+  // }
 
   const renderDays = () => {
     const today = new Date();
@@ -62,7 +77,11 @@ const WeeklyCalendarView = () => {
                 {showPeriodVine && ( 
                     <div className='vine-img-container'>
                         <img className="vine-img" src={periodVine} alt="vine" />
-                    </div> )}
+                    </div> 
+                )}
+                <div className='log-period-button'>
+                  Log Period
+                </div>
             </div>
         </div>
       );

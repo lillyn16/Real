@@ -4,10 +4,18 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRange } from "react-date-range";
 import { enGB } from 'date-fns/locale';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { sendPhaseData } from "../../services/api";
 
 const WelcomePage = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const userId = location.state?.userId;
+
+    const maxDate = new Date();
+    const minDate = new Date();
+    minDate.setFullYear(minDate.getFullYear() - 5);
+
     const [lastPeriodState, setLastPeriodState] = useState([
         {
           startDate: new Date(),
@@ -17,14 +25,8 @@ const WelcomePage = () => {
         
     ]);
 
-    const maxDate = new Date();
-    const minDate = new Date();
-    minDate.setFullYear(minDate.getFullYear() - 5);
-
-    const navigate = useNavigate();
-
     const skip = () => {
-        navigate('/home');
+        navigate('/login');
     }
 
     const submit = async () => {
@@ -32,7 +34,7 @@ const WelcomePage = () => {
         const periodLength = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)); // Calculate period length
 
         const phaseData = {
-            UserId: 5, // Replace with actual user ID
+            UserId: userId,
             LastPeriodStart: startDate.toISOString(),
             LastPeriodEnd: endDate.toISOString(),
             CycleLength: 28, // Initial value for all users
@@ -42,7 +44,7 @@ const WelcomePage = () => {
         try {
             const response = await sendPhaseData(phaseData);
             console.log('Phase data submitted successfully:', response);
-            navigate('/home');
+            navigate('/login');
         } catch (error) {
             console.error('Failed to submit phase data:', error);
         }
@@ -56,7 +58,7 @@ const WelcomePage = () => {
                         Welcome to REAL
                     </div>
                     <div className="welcome-header-subtext">
-                        Before you get started, we need to collect a bit of information to help predict your next menstrual cycle.
+                        Before you get started, we need to collect a bit of information to help predict your next menstrual cycle. You will be sent back to login after this page.
                     </div>
                 </div>
                 <hr className="welcome-hr"></hr>

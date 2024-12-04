@@ -7,17 +7,18 @@ const HomePage = () => {
   const [periodData, setPeriodData] = useState(null);
   const [isPeriodWeek, setIsPeriodWeek] = useState(false);
 
+  const userId = localStorage.getItem('userId');
+
   useEffect(() => {
     const getPhaseData = async () => {
       try {
-        const phaseData = await getPhase(5);  // replace with user id
+        const phaseData = await getPhase(userId);
         setPeriodData({
           nextPeriodStart: phaseData.nextPeriodStart,
           nextPeriodEnd: phaseData.nextPeriodEnd,
           currentPhase: phaseData.currentPhase
         });
         setIsPeriodWeek(phaseData.isCurrentWeekPeriod); 
-        // console.log(phaseData);
       } catch (error) {
         console.error('Error fetching period data:', error);
       }

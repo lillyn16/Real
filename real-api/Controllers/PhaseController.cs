@@ -88,5 +88,25 @@ namespace RealApi.Controllers
                 isCurrentWeekPeriod = currentDate >= nextPeriodStart && currentDate <= nextPeriodEnd
             });
         }
+        
+        [HttpPost("log-period-day")]
+        public IActionResult LogPeriodDay([FromBody] PeriodLogRequest request)
+        {
+            if (request == null || request.PeriodDate == default)
+            {
+                return BadRequest("Invalid period log data.");
+            }
+
+            var periodLog = new PeriodLog
+            {
+                UserId = request.UserId,
+                PeriodDate = request.PeriodDate
+            };
+
+            _context.PeriodLogs.Add(periodLog);
+            _context.SaveChanges();
+
+            return Ok(new {periodLog.UserId, periodLog.PeriodDate});
+        }
     }
 }

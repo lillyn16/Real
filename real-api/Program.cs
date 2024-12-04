@@ -18,20 +18,15 @@ builder.Services.AddScoped<AuthService>();
 // Configure CORS
 builder.Services.AddCors(options =>
 {
-    // options.AddPolicy("AllowFrontend",
-    //     policy =>
-    //     {
-    //         policy.WithOrigins("http://localhost:3000") // Frontend origin
-    //               .AllowCredentials()
-    //               .AllowAnyHeader()
-    //               .AllowAnyMethod();
-    //     });
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000") // Frontend origin
+                  .AllowCredentials()
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+
 });
 
 // Add session services
@@ -46,8 +41,6 @@ builder.Services.AddSession(options =>
 // Add DbContext services
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-builder.Services.AddScoped<UserService>();
 
 // Add Controllers and Swagger
 builder.Services.AddControllers();
@@ -65,7 +58,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // CORS should be placed before UseAuthentication and UseAuthorization
-app.UseCors("AllowAll"); // Use the configured CORS middleware
+app.UseCors("AllowFrontend"); // Use the configured CORS middleware
 
 // Use sessions in the app pipeline
 app.UseSession();

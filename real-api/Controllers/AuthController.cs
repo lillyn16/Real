@@ -48,7 +48,7 @@ namespace RealApi.Controllers
 
                 HttpContext.Session.SetInt32("userId", user.UserID);
 
-                return Ok("Login successful");
+                return Ok(user.UserID);
             }
             catch (Exception ex)
             {

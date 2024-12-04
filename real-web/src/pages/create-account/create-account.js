@@ -22,8 +22,9 @@ const CreateAccountPage = () => {
 
     try {
       const result = await registerUser(userRequest);
-      console.log('User created successfully:', result);
-      navigate('/welcome');
+      const userId = result.userID;
+      console.log(userId);
+      navigate('/welcome', { state: { userId } });
     } catch (error) {
       console.error('Error creating user');
     }

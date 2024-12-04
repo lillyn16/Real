@@ -20,25 +20,26 @@ import { checkSession } from './services/api';
 function App() {
   const location = useLocation();
   const showHeaderAndFooter = location.pathname !== '/login';
-  const skipSessionCheck = location.pathname === '/login' || location.pathname === '/create-account' || location.pathname === '/welcome'
+  const skipSessionCheck = location.pathname === '/login' || location.pathname === '/create-account' || 
+                          location.pathname === '/welcome' || location.pathname === '/forgot-password';
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //     const verifySession = async () => {
-  //         try {
-  //           if (skipSessionCheck) {
-  //               return;
-  //           }
-  //             await checkSession();
-  //             console.log('Session is valid');
-  //         } catch (error) {
-  //             console.error('Session expired:', error);
-  //             navigate('/login'); // back to login if session is expired
-  //         }
-  //     };
+  useEffect(() => {
+      const verifySession = async () => {
+          try {
+            if (skipSessionCheck) {
+                return;
+            }
+              await checkSession();
+              console.log('Session is valid');
+          } catch (error) {
+              console.error('Session expired:', error);
+              navigate('/login'); // back to login if session is expired
+          }
+      };
 
-  //     verifySession();
-  // }, [navigate]);
+      verifySession();
+  }, [navigate]);
 
   return (
       <div className='real-app-container'>

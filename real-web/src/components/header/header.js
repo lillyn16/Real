@@ -9,7 +9,7 @@ const Header = () => {
     const navigate = useNavigate();
     const dropdownRef = useRef(null);
     const location = useLocation();
-    const showTabs = location.pathname !== '/create-account' && location.pathname !== '/welcome';
+    const showTabs = location.pathname !== '/create-account' && location.pathname !== '/welcome' && location.pathname !== '/forgot-password';
 
     const closeDropdown = (e) => {
         if (isDropdownOpen && !dropdownRef.current?.contains(e.target)) {
@@ -24,9 +24,14 @@ const Header = () => {
         navigate('/profile');
     };
 
-    const changePassword = () => {
-        setIsDropdownOpen(false); 
-        navigate('/forgot-password');
+    const changePassword = async () => {
+        try {
+            await logout();
+            setIsDropdownOpen(false); 
+            navigate('/forgot-password');
+        } catch (error) {
+            console.log('Error:', error);
+        }
     };
 
     const logoutClicked = async () => {
