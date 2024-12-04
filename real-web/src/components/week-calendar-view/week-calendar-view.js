@@ -31,19 +31,6 @@ const WeeklyCalendarView = () => {
     getPhaseData();
   }, []);
 
-  // const logPeriod = async () => {
-  //   const periodLogRequest = {
-  //     userId,
-  //     date
-  //   }
-
-  //   try {
-  //     const result = await logPeriodDay(periodLogRequest)
-  //     console.log(result);
-  //   } catch (error) {
-  //     console.error('Error creating user');
-  //   }
-  // }
 
   const renderDays = () => {
     const today = new Date();
@@ -79,9 +66,6 @@ const WeeklyCalendarView = () => {
                         <img className="vine-img" src={periodVine} alt="vine" />
                     </div> 
                 )}
-                <div className='log-period-button'>
-                  Log Period
-                </div>
             </div>
         </div>
       );

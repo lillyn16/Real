@@ -26,12 +26,16 @@ const CalendarPage = () => {
 
   const calculateDaysUntilPeriod = (nextPeriodStart) => {
     const today = new Date();
+    const startOfWeek = new Date(today)
+    startOfWeek.setDate(today.getDate() - today.getDay()); // Sunday
     const startOfPeriod = new Date(nextPeriodStart);
-    const diffInTime = startOfPeriod - today;
+    const diffInTime = startOfPeriod - startOfWeek;
+    // const diffInTime = Math.abs(today - startOfPeriod);
+    // const diffInTime = today - startOfPeriod;
+
     const diffInDays = Math.ceil(diffInTime / (1000 * 3600 * 24));
     
-    // Generate an array of days leading up to the period start date
-    const days = Array.from({ length: 8 }, (_, i) => diffInDays - i).reverse();
+    const days = Array.from({ length: 7 }, (_, i) => diffInDays - i);
     setDaysUntilPeriod(days);
   };
 
@@ -67,12 +71,6 @@ const CalendarPage = () => {
                     <p>
                       <h4>{days} Days <br />Until Period</h4>
                       <button className="log" onClick={() => logPeriod(days)}>Log Period</button>
-                    </p>
-                    <p>
-                      <h4>Symptoms</h4>
-                      cramp<br />
-                      acne<br />
-                      bloating
                     </p>
                     <p>
                       <a className="log" href="/symptoms">Log Symptoms</a>
